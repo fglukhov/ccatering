@@ -167,32 +167,32 @@ $(document).ready(function () {
         $(this).parents(".slider-wrapper").find(".begin-link").on("click",function() {
           sldr.slider("value",sldr.slider("option","min"))
           val = minVal;
-          $(this).find(".ui-slider-handle").html(val);
-          $(this).find(".ui-slider-handle").formatNumber();
-          $(this).parents(".calc-cont").find(".price-val").formatNumber();
-          $(this).find(".ui-slider-handle").html(val);
-          $(this).find(".ui-slider-handle").formatNumber();
-          $(this).parents(".calc-cont").find(".personprice-val").html(val);
-          $(this).parents(".calc-cont").find(".personprice-val").formatNumber();
-          $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".people-slider").slider('value')));
-          $(this).parents(".calc-cont").find(".price-val").formatNumber();
-          $(this).parents(".calc-cont").find(".result-table-cont").hide();
-          $(this).parents(".calc-cont").find(".result-table-cont").eq(0).fadeIn(150);
+          sldr.find(".ui-slider-handle").html(val);
+          sldr.find(".ui-slider-handle").formatNumber();
+          sldr.parents(".calc-cont").find(".price-val").formatNumber();
+          sldr.find(".ui-slider-handle").html(val);
+          sldr.find(".ui-slider-handle").formatNumber();
+          sldr.parents(".calc-cont").find(".personprice-val").html(val);
+          sldr.parents(".calc-cont").find(".personprice-val").formatNumber();
+          sldr.parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt(sldr.parents(".calc-cont").find(".people-slider").slider('value')));
+          sldr.parents(".calc-cont").find(".price-val").formatNumber();
+          sldr.parents(".calc-cont").find(".result-table-cont").hide();
+          sldr.parents(".calc-cont").find(".result-table-cont").eq(0).fadeIn(150);
         });
         $(this).parents(".slider-wrapper").find(".end-link").on("click",function() {
           sldr.slider("value",sldr.slider("option","max"))
           val = maxVal;
-          $(this).find(".ui-slider-handle").html(val);
-          $(this).find(".ui-slider-handle").formatNumber();
-          $(this).parents(".calc-cont").find(".price-val").formatNumber();
-          $(this).find(".ui-slider-handle").html(val);
-          $(this).find(".ui-slider-handle").formatNumber();
-          $(this).parents(".calc-cont").find(".personprice-val").html(val);
-          $(this).parents(".calc-cont").find(".personprice-val").formatNumber();
-          $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".people-slider").slider('value')));
-          $(this).parents(".calc-cont").find(".price-val").formatNumber();
-          $(this).parents(".calc-cont").find(".result-table-cont").hide();
-          $(this).parents(".calc-cont").find(".result-table-cont").eq(2).fadeIn(150);
+          sldr.find(".ui-slider-handle").html(val);
+          sldr.find(".ui-slider-handle").formatNumber();
+          sldr.parents(".calc-cont").find(".price-val").formatNumber();
+          sldr.find(".ui-slider-handle").html(val);
+          sldr.find(".ui-slider-handle").formatNumber();
+          sldr.parents(".calc-cont").find(".personprice-val").html(val);
+          sldr.parents(".calc-cont").find(".personprice-val").formatNumber();
+          sldr.parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt(sldr.parents(".calc-cont").find(".people-slider").slider('value')));
+          sldr.parents(".calc-cont").find(".price-val").formatNumber();
+          sldr.parents(".calc-cont").find(".result-table-cont").hide();
+          sldr.parents(".calc-cont").find(".result-table-cont").eq(2).fadeIn(150);
         });
         
       },
