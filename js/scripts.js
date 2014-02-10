@@ -64,76 +64,246 @@ $(document).ready(function () {
   }
   
   $(".people-slider").each(function() {
-    $(this).slider({
-      step: 10,
-      range: "min",
-      min: 50,
-      max: 5000,
-      animate: "slow",
-      create: function( e, ui ) {
+    $(this).bind({
+      slidechange : function(event,ui) {
+        val = ui.value;
+        $(this).find(".ui-slider-handle").html(val);
+        $(this).find(".ui-slider-handle").formatNumber();
+        $(this).parents(".calc-cont").find(".area-val").html(parseFloat($(this).attr("areafactor"))*parseInt(val));
+        $(this).parents(".calc-cont").find(".area-val").formatNumber();
+        $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".price-slider .ui-slider-handle").html().replace(" ","")));
+        $(this).parents(".calc-cont").find(".price-val").formatNumber();
+      },
+      slidecreate : function(event,ui) {
         var sldr = $(this);
         $(this).parents(".slider-wrapper").append("<div class='begin-link' />");
         $(this).parents(".slider-wrapper").append("<div class='end-link' />");
         var val=$(this).slider('value');
         $(this).find(".ui-slider-handle").html(val);
         $(this).find(".ui-slider-handle").formatNumber();
-        $(this).parents(".calc-l").find(".area-val").html(parseFloat($(this).attr("areafactor"))*parseInt(val));
-        $(this).parents(".calc-l").find(".area-val").formatNumber();
+        $(this).parents(".calc-cont").find(".area-val").html(parseFloat($(this).attr("areafactor"))*parseInt(val));
+        $(this).parents(".calc-cont").find(".area-val").formatNumber();
         $(this).parents(".slider-wrapper").find(".begin-link").on("click",function() {
-          sldr.slider("value",sldr.slider("option","min"))
+          sldr.slider("value",sldr.slider("option","min"));
         });
         $(this).parents(".slider-wrapper").find(".end-link").on("click",function() {
           sldr.slider("value",sldr.slider("option","max"))
         });
-      },
-      slide: function(event, ui) {
-        val = ui.value;
-        $(this).find(".ui-slider-handle").html(val);
-        $(this).find(".ui-slider-handle").formatNumber();
-        $(this).parents(".calc-l").find(".area-val").html(parseFloat($(this).attr("areafactor"))*parseInt(val));
-        $(this).parents(".calc-l").find(".area-val").formatNumber();
-        $(this).parents(".calc-l").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-l").find(".price-slider").slider('value')));
-        $(this).parents(".calc-l").find(".price-val").formatNumber();
       }
+    }).slider({
+        step: 10,
+        range: "min",
+        min: 50,
+        max: 500,
+        animate: "slow",
+        slide: function(event, ui) {
+          val = ui.value;
+          $(this).find(".ui-slider-handle").html(val);
+          $(this).find(".ui-slider-handle").formatNumber();
+          $(this).parents(".calc-cont").find(".area-val").html(parseFloat($(this).attr("areafactor"))*parseInt(val));
+          $(this).parents(".calc-cont").find(".area-val").formatNumber();
+          $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".price-slider .ui-slider-handle").html().replace(" ","")));
+          $(this).parents(".calc-cont").find(".price-val").formatNumber();
+        }
     });
   });
   
+  // $(".people-slider").each(function() {
+    // $(this).slider({
+      // step: 10,
+      // range: "min",
+      // min: 50,
+      // max: 500,
+      // animate: "slow",
+      // create: function( e, ui ) {
+        // var sldr = $(this);
+        // $(this).parents(".slider-wrapper").append("<div class='begin-link' />");
+        // $(this).parents(".slider-wrapper").append("<div class='end-link' />");
+        // var val=$(this).slider('value');
+        // $(this).find(".ui-slider-handle").html(val);
+        // $(this).find(".ui-slider-handle").formatNumber();
+        // $(this).parents(".calc-cont").find(".area-val").html(parseFloat($(this).attr("areafactor"))*parseInt(val));
+        // $(this).parents(".calc-cont").find(".area-val").formatNumber();
+        // $(this).parents(".slider-wrapper").find(".begin-link").on("click",function() {
+          // sldr.slider("value",sldr.slider("option","min"));
+        // });
+        // $(this).parents(".slider-wrapper").find(".end-link").on("click",function() {
+          // sldr.slider("value",sldr.slider("option","max"))
+        // });
+      // },
+      // slide: function(event, ui) {
+        // val = ui.value;
+        // $(this).find(".ui-slider-handle").html(val);
+        // $(this).find(".ui-slider-handle").formatNumber();
+        // $(this).parents(".calc-cont").find(".area-val").html(parseFloat($(this).attr("areafactor"))*parseInt(val));
+        // $(this).parents(".calc-cont").find(".area-val").formatNumber();
+        // $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".price-slider .ui-slider-handle").html().replace(" ","")));
+        // $(this).parents(".calc-cont").find(".price-val").formatNumber();
+      // }
+    // });
+  // });
+  
   $(".price-slider").each(function() {
-    $(this).slider({
-      step: 10,
-      range: "min",
-      min: 1000,
-      max: 4500,
-      animate: "slow",
-      create: function( e, ui ) {
+    var prices = $(this).attr("prices").split("-");
+    var minVal = parseInt(prices[0]);
+    var midVal = parseInt(prices[1]);
+    var maxVal = parseInt(prices[prices.length-1]);
+    
+    $(this).bind({
+      slidecreate : function(event,ui) {
         var sldr = $(this);
         $(this).parents(".slider-wrapper").append("<div class='begin-link' />");
         $(this).parents(".slider-wrapper").append("<div class='end-link' />");
-        var val=$(this).slider('value');
+        var val=minVal;
         $(this).find(".ui-slider-handle").html(val);
         $(this).find(".ui-slider-handle").formatNumber();
-        $(this).parents(".calc-l").find(".personprice-val").html(val);
-        $(this).parents(".calc-l").find(".personprice-val").formatNumber();
-        $(this).parents(".calc-l").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-l").find(".people-slider").slider('value')));
-        $(this).parents(".calc-l").find(".price-val").formatNumber();
+        $(this).parents(".calc-cont").find(".personprice-val").html(val);
+        $(this).parents(".calc-cont").find(".personprice-val").formatNumber();
+        $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".people-slider").slider('value')));
+        $(this).parents(".calc-cont").find(".price-val").formatNumber();
+        $(this).parents(".calc-cont").find(".result-table-cont").hide();
+        $(this).parents(".calc-cont").find(".result-table-cont").eq(0).fadeIn(150);
+        
         $(this).parents(".slider-wrapper").find(".begin-link").on("click",function() {
           sldr.slider("value",sldr.slider("option","min"))
+          val = minVal;
+          $(this).find(".ui-slider-handle").html(val);
+          $(this).find(".ui-slider-handle").formatNumber();
+          $(this).parents(".calc-cont").find(".price-val").formatNumber();
+          $(this).find(".ui-slider-handle").html(val);
+          $(this).find(".ui-slider-handle").formatNumber();
+          $(this).parents(".calc-cont").find(".personprice-val").html(val);
+          $(this).parents(".calc-cont").find(".personprice-val").formatNumber();
+          $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".people-slider").slider('value')));
+          $(this).parents(".calc-cont").find(".price-val").formatNumber();
+          $(this).parents(".calc-cont").find(".result-table-cont").hide();
+          $(this).parents(".calc-cont").find(".result-table-cont").eq(0).fadeIn(150);
         });
         $(this).parents(".slider-wrapper").find(".end-link").on("click",function() {
           sldr.slider("value",sldr.slider("option","max"))
+          val = maxVal;
+          $(this).find(".ui-slider-handle").html(val);
+          $(this).find(".ui-slider-handle").formatNumber();
+          $(this).parents(".calc-cont").find(".price-val").formatNumber();
+          $(this).find(".ui-slider-handle").html(val);
+          $(this).find(".ui-slider-handle").formatNumber();
+          $(this).parents(".calc-cont").find(".personprice-val").html(val);
+          $(this).parents(".calc-cont").find(".personprice-val").formatNumber();
+          $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".people-slider").slider('value')));
+          $(this).parents(".calc-cont").find(".price-val").formatNumber();
+          $(this).parents(".calc-cont").find(".result-table-cont").hide();
+          $(this).parents(".calc-cont").find(".result-table-cont").eq(2).fadeIn(150);
         });
+        
       },
-      slide: function(event, ui) {
-        val = ui.value;
+      slidestop : function(event,ui) {
+        sliderVal = ui.value;
+        if (sliderVal <= 250) {
+          $(this).slider( "value", 0 );
+          $(this).parents(".calc-cont").find(".result-table-cont").hide();
+          $(this).parents(".calc-cont").find(".result-table-cont").eq(0).fadeIn(150);
+          val = minVal;
+        }
+        if (sliderVal > 250 && sliderVal <= 750) {
+          $(this).slider( "value", 500 );
+          $(this).parents(".calc-cont").find(".result-table-cont").hide();
+          $(this).parents(".calc-cont").find(".result-table-cont").eq(1).fadeIn(150);
+          val = midVal;
+        }
+        if (sliderVal > 750) {
+          $(this).slider( "value", 1000);
+          $(this).parents(".calc-cont").find(".result-table-cont").hide();
+          $(this).parents(".calc-cont").find(".result-table-cont").eq(2).fadeIn(150);
+          val = maxVal;
+        }
+        // val = $(this).slider("value");
         $(this).find(".ui-slider-handle").html(val);
         $(this).find(".ui-slider-handle").formatNumber();
-        $(this).parents(".calc-l").find(".personprice-val").html(val);
-        $(this).parents(".calc-l").find(".personprice-val").formatNumber();
-        $(this).parents(".calc-l").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-l").find(".people-slider").slider('value')));
-        $(this).parents(".calc-l").find(".price-val").formatNumber();
+        $(this).parents(".calc-cont").find(".price-val").formatNumber();
+        $(this).find(".ui-slider-handle").html(val);
+        $(this).find(".ui-slider-handle").formatNumber();
+        $(this).parents(".calc-cont").find(".personprice-val").html(val);
+        $(this).parents(".calc-cont").find(".personprice-val").formatNumber();
+        $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".people-slider").slider('value')));
+        $(this).parents(".calc-cont").find(".price-val").formatNumber();
       }
+    }).slider({
+      step: 10,
+      range: "min",
+      min: 0,
+      max: 1000,
+      animate: "slow"
     });
   });
+  
+  // $(".price-slider").each(function() {
+    // var prices = $(this).attr("prices").split("-");
+    // var minVal = parseInt(prices[0]);
+    // var midVal = parseInt(prices[1]);
+    // var maxVal = parseInt(prices[prices.length-1]);
+    // $(this).slider({
+      // step: 10,
+      // range: "min",
+      // min: 0,
+      // max: 1000,
+      // animate: "slow",
+      // create: function( e, ui ) {
+        // var sldr = $(this);
+        // $(this).parents(".slider-wrapper").append("<div class='begin-link' />");
+        // $(this).parents(".slider-wrapper").append("<div class='end-link' />");
+        // var val=minVal;
+        // $(this).find(".ui-slider-handle").html(val);
+        // $(this).find(".ui-slider-handle").formatNumber();
+        // $(this).parents(".calc-cont").find(".personprice-val").html(val);
+        // $(this).parents(".calc-cont").find(".personprice-val").formatNumber();
+        // $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".people-slider").slider('value')));
+        // $(this).parents(".calc-cont").find(".price-val").formatNumber();
+        // $(this).parents(".slider-wrapper").find(".begin-link").on("click",function() {
+          // sldr.slider("value",sldr.slider("option","min"))
+        // });
+        // $(this).parents(".slider-wrapper").find(".end-link").on("click",function() {
+          // sldr.slider("value",sldr.slider("option","max"))
+        // });
+        // $(this).parents(".calc-cont").find(".result-table-cont").hide();
+        // $(this).parents(".calc-cont").find(".result-table-cont").eq(0).fadeIn(150);
+      // },
+      // slide: function(event, ui) {
+        // val = ui.value;
+      // },
+      // stop: function(event, ui) {
+        // sliderVal = ui.value;
+        // if (sliderVal <= 250) {
+          // $(this).slider( "value", 0 );
+          // $(this).parents(".calc-cont").find(".result-table-cont").hide();
+          // $(this).parents(".calc-cont").find(".result-table-cont").eq(0).fadeIn(150);
+          // val = minVal;
+        // }
+        // if (sliderVal > 250 && sliderVal <= 750) {
+          // $(this).slider( "value", 500 );
+          // $(this).parents(".calc-cont").find(".result-table-cont").hide();
+          // $(this).parents(".calc-cont").find(".result-table-cont").eq(1).fadeIn(150);
+          // val = midVal;
+        // }
+        // if (sliderVal > 750) {
+          // $(this).slider( "value", 1000);
+          // $(this).parents(".calc-cont").find(".result-table-cont").hide();
+          // $(this).parents(".calc-cont").find(".result-table-cont").eq(2).fadeIn(150);
+          // val = maxVal;
+        // }
+        // // val = $(this).slider("value");
+        // $(this).find(".ui-slider-handle").html(val);
+        // $(this).find(".ui-slider-handle").formatNumber();
+        // $(this).parents(".calc-cont").find(".price-val").formatNumber();
+        // $(this).find(".ui-slider-handle").html(val);
+        // $(this).find(".ui-slider-handle").formatNumber();
+        // $(this).parents(".calc-cont").find(".personprice-val").html(val);
+        // $(this).parents(".calc-cont").find(".personprice-val").formatNumber();
+        // $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".people-slider").slider('value')));
+        // $(this).parents(".calc-cont").find(".price-val").formatNumber();
+      // }
+      
+    // });
+  // });
     
     
   /* --------------------------------------------------------- */

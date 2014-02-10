@@ -57,11 +57,11 @@
         <div class="center-wrapper">
       		<div class="fc">
       			<div class="site-ttl">
-              <div class="ttl">Профессиональный кейтеринг<br />
-              	в Москве и области</div>
+              <div class="ttl">Кейтеринг в Москве<br />
+              	и Московской области</div>
               <span>
-                Современные технологии<br />
-                и профессиональный персонал
+                Профессиональный ресторан<br />
+                выездного обслуживания
               </span>
             </div>
       			<div class="logo">
@@ -69,7 +69,7 @@
             </div>
       			<div class="header-phone">
               <div class="header-phone-phone">
-                <span class="phone">+7 (495) 777-66-55</span> <span class="callback-button" onclick="openPopup('callbackPopup')">Заказать звонок</span>
+                <span class="phone">+7 (495) 799-93-03</span> <span class="callback-button" onclick="openPopup('callbackPopup')">Заказать звонок</span>
               </div>
       				<div class="button" onclick="openPopup('orderPopup')">Заказать кейтеринг</div>
       			</div>
@@ -681,6 +681,8 @@
               </div>
             </div>
             
+            <!-- Коэф. площадей. Банкет 3, фуршет 1.5, барбекю 3, кофе-брейк 1,6, коктейль 1,5 -->
+            
             <div class="tabs-content">
             
               <div class="tab-content" rel="calc-1">
@@ -690,17 +692,18 @@
                       <div class="slider-item">
                         <div class="ttl">Количество человек</div>
                         <div class="slider-wrapper">
-                          <div class="calc-slider people-slider" areafactor="1.5"></div>
+                          <div class="calc-slider people-slider" areafactor="3"></div>
                           <div class="slider-labels">
                             <div class="slider-label-l">50</div>
-                            <div class="slider-label-r">5 000</div>
+                            <div class="slider-label-r">500</div>
                           </div>
                         </div>
                       </div>
                       <div class="slider-item">
                         <div class="ttl">Стоимость на человека, руб.</div>
-                        <div class="slider-wrapper">
-                          <div class="calc-slider price-slider"></div>
+                        <div class="slider-wrapper slider-wrapper-2">
+                          <div class="slider-scale"></div>
+                          <div class="calc-slider price-slider" prices="1950-2800-3500"></div>
                           <div class="slider-labels">
                             <div class="slider-label-l">Эконом</div>
                             <div class="slider-label-m">Бизнес</div>
@@ -711,10 +714,365 @@
                     </div>
                     <div class="calc-results">
                       <div class="cont">
+                        <div class="result-menu">
+                          <div class="ttl">Вес блюд и объем напитков на одну персону</div>
+                          <div class="result-menu-cont">
+                            <div class="result-table-cont fc">
+                              <div class="result-table-col result-table-col-l">
+                              	<table class="result-table">
+                              	  <tr>
+                              	    <td class="name">
+                              	      Холодные закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      350 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Салаты
+                              	    </td>
+                              	    <td class="val">
+                              	      220 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Горячие зауски
+                              	    </td>
+                              	    <td class="val">
+                              	      70 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Горячие блюда
+                              	    </td>
+                              	    <td class="val">
+                              	      150 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Гарниры
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Соусная станция
+                              	    </td>
+                              	    <td class="val">
+                              	      40 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Свежая выпечка
+                              	    </td>
+                              	    <td class="val">
+                              	      90 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Десерты
+                              	    </td>
+                              	    <td class="val">
+                              	      50 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Фрукты
+                              	    </td>
+                              	    <td class="val">
+                              	      50 г
+                              	    </td>
+                              	  </tr>
+                                  <tr class="total">
+                              	    <td class="name">
+                              	      Общий вес
+                              	    </td>
+                              	    <td class="val">
+                              	      1120 г
+                              	    </td>
+                              	  </tr>
+                              	</table>
+                              </div>
+                              <div class="result-table-col result-table-col-r">
+                                <table class="result-table">
+                                  <tr>
+                                    <td class="name">
+                                      Безалкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      850 мл
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="name">
+                                      Горячие напитки
+                                    </td>
+                                    <td class="val">
+                                      200 мл
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="result-table-cont fc">
+                              <div class="result-table-col result-table-col-l">
+                              	<table class="result-table">
+                              	  <tr>
+                              	    <td class="name">
+                              	      Welcome
+                              	    </td>
+                              	    <td class="val">
+                              	      40 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Холодные закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      380 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Салаты
+                              	    </td>
+                              	    <td class="val">
+                              	      230 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Горячие зауски
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Горячие блюда
+                              	    </td>
+                              	    <td class="val">
+                              	      150 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Гарниры
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Соусная станция
+                              	    </td>
+                              	    <td class="val">
+                              	      50 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Свежая выпечка
+                              	    </td>
+                              	    <td class="val">
+                              	      120 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Десерты
+                              	    </td>
+                              	    <td class="val">
+                              	      90 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Фрукты
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr class="total">
+                              	    <td class="name">
+                              	      Общий вес
+                              	    </td>
+                              	    <td class="val">
+                              	      1360 г
+                              	    </td>
+                              	  </tr>
+                              	</table>
+                              </div>
+                              <div class="result-table-col result-table-col-r">
+                                <table class="result-table">
+                                  <tr>
+                                    <td class="name">
+                                      Безалкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      1100 мл
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="name">
+                                      Горячие напитки
+                                    </td>
+                                    <td class="val">
+                                      400 мл
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="result-table-cont fc">
+                              <div class="result-table-col result-table-col-l">
+                              	<table class="result-table">
+                                  <tr>
+                              	    <td class="name">
+                              	      Welcome
+                              	    </td>
+                              	    <td class="val">
+                              	      60 г
+                              	    </td>
+                              	  </tr>
+                              	  <tr>
+                              	    <td class="name">
+                              	      Холодные закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      410 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Салаты
+                              	    </td>
+                              	    <td class="val">
+                              	      250 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Горячие зауски
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Карвинг станция
+                              	    </td>
+                              	    <td class="val">
+                              	      120 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Горячие блюда
+                              	    </td>
+                              	    <td class="val">
+                              	      200 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Гарниры
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Соусная станция
+                              	    </td>
+                              	    <td class="val">
+                              	      60 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Свежая выпечка
+                              	    </td>
+                              	    <td class="val">
+                              	      120 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Десерты
+                              	    </td>
+                              	    <td class="val">
+                              	      120 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Фрукты
+                              	    </td>
+                              	    <td class="val">
+                              	      130 г
+                              	    </td>
+                              	  </tr>
+                                  <tr class="total">
+                              	    <td class="name">
+                              	      Общий вес
+                              	    </td>
+                              	    <td class="val">
+                              	      1670 г
+                              	    </td>
+                              	  </tr>
+                              	</table>
+                              </div>
+                              <div class="result-table-col result-table-col-r">
+                                <table class="result-table">
+                                  <tr>
+                                    <td class="name">
+                                      Безалкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      1340 мл
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="name">
+                                      Горячие напитки
+                                    </td>
+                                    <td class="val">
+                                      400 мл
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       	<div class="result-area fc">
                       	  <div class="ttl">Необходимая площадь площадки:</div>
                       	  <div class="val"><span class="area-val">0</span> м&sup2;</div>
                       	</div>
+                      	
+                      </div>
+                    </div>
+                	</div>
+                  <div class="calc-r">
+                    <div class="calc-results-2">
+                      <div class="calc-results-2-cont">
+                        <h3>Итого:</h3>
                       	<div class="result-personprice fc">
                       	  <div class="ttl">Стоимость<br />на человека:</div>
                       	  <div class="val"><span class="personprice-val">0</span> р.</div>
@@ -725,30 +1083,30 @@
                       	</div>
                       </div>
                     </div>
-                	</div>
-                  <div class="calc-r">
-                    <h3>
-                      <span>Закажите</span>кейтеринг сейчас
-                    </h3>
-                    <hr/>
-                    <div class="common-form order-form">
-                      <form action=".">
-                      	<div class="form-item errors-left">
-                      	  <label class="placeholder" for="order_1_name">Ваше имя</label>
-                      	  <input type="text" class="form-text" name="order_1_name" id="order_1_name" required />
-                      	</div>
-                      	<div class="form-item errors-left">
-                      	  <label class="placeholder" for="order_1_phone">Телефон</label>
-                      	  <input type="text" class="form-text form-phone" name="order_1_phone" id="order_1_phone" />
-                      	</div>
-                      	<div class="form-item errors-left">
-                      	  <label class="placeholder" for="order_1_email">E-mail</label>
-                      	  <input type="text" class="form-text form-email" name="order_1_email" id="order_1_email" />
-                      	</div>
-                      	<div class="form-footer">
-                      		<input type="submit" value="Заказать кейтеринг" class="form-submit button"/>
-                      	</div>
-                      </form>
+                    <div class="order-form-wrapper">
+                    	<h3>
+                    	  <span>Закажите</span>кейтеринг сейчас
+                    	</h3>
+                    	<hr/>
+                    	<div class="common-form order-form">
+                    	  <form action=".">
+                    	  	<div class="form-item errors-left">
+                    	  	  <label class="placeholder" for="order_1_name">Ваше имя</label>
+                    	  	  <input type="text" class="form-text" name="order_1_name" id="order_1_name" required />
+                    	  	</div>
+                    	  	<div class="form-item errors-left">
+                    	  	  <label class="placeholder" for="order_1_phone">Телефон</label>
+                    	  	  <input type="text" class="form-text form-phone" name="order_1_phone" id="order_1_phone" />
+                    	  	</div>
+                    	  	<div class="form-item errors-left">
+                    	  	  <label class="placeholder" for="order_1_email">E-mail</label>
+                    	  	  <input type="text" class="form-text form-email" name="order_1_email" id="order_1_email" />
+                    	  	</div>
+                    	  	<div class="form-footer">
+                    	  		<input type="submit" value="Заказать кейтеринг" class="form-submit button"/>
+                    	  	</div>
+                    	  </form>
+                    	</div>
                     </div>
                   </div>
                 </div>
@@ -761,17 +1119,18 @@
                       <div class="slider-item">
                         <div class="ttl">Количество человек</div>
                         <div class="slider-wrapper">
-                          <div class="calc-slider people-slider" areafactor="2.5"></div>
+                          <div class="calc-slider people-slider" areafactor="1.5"></div>
                           <div class="slider-labels">
                             <div class="slider-label-l">50</div>
-                            <div class="slider-label-r">5 000</div>
+                            <div class="slider-label-r">500</div>
                           </div>
                         </div>
                       </div>
                       <div class="slider-item">
                         <div class="ttl">Стоимость на человека, руб.</div>
-                        <div class="slider-wrapper">
-                          <div class="calc-slider price-slider"></div>
+                        <div class="slider-wrapper slider-wrapper-2">
+                          <div class="slider-scale"></div>
+                          <div class="calc-slider price-slider" prices="850-1450-2100"></div>
                           <div class="slider-labels">
                             <div class="slider-label-l">Эконом</div>
                             <div class="slider-label-m">Бизнес</div>
@@ -782,10 +1141,301 @@
                     </div>
                     <div class="calc-results">
                       <div class="cont">
+                        <div class="result-menu">
+                          <div class="ttl">Вес блюд и объем напитков на одну персону</div>
+                          <div class="result-menu-cont">
+                            <div class="result-table-cont fc">
+                              <div class="result-table-col result-table-col-l">
+                              	<table class="result-table">
+                              	  <tr>
+                              	    <td class="name">
+                              	      Канапе
+                              	    </td>
+                              	    <td class="val">
+                              	      90 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Холодные закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      80 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Тарталетки
+                              	    </td>
+                              	    <td class="val">
+                              	      90 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Горячие закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      50 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Выпечка
+                              	    </td>
+                              	    <td class="val">
+                              	      60 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Десерты
+                              	    </td>
+                              	    <td class="val">
+                              	      60 г
+                              	    </td>
+                              	  </tr>
+                                  <tr class="total">
+                              	    <td class="name">
+                              	      Общий вес
+                              	    </td>
+                              	    <td class="val">
+                              	      430 г
+                              	    </td>
+                              	  </tr>
+                              	</table>
+                              </div>
+                              <div class="result-table-col result-table-col-r">
+                                <table class="result-table">
+                                  <tr>
+                                    <td class="name">
+                                      Безалкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      200 мл
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="name">
+                                      Горячие напитки
+                                    </td>
+                                    <td class="val">
+                                      200 мл
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="result-table-cont fc">
+                              <div class="result-table-col result-table-col-l">
+                              	<table class="result-table">
+                              	  <tr>
+                              	    <td class="name">
+                              	      Канапе
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Холодные закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      120 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Тарталетки
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Салаты
+                              	    </td>
+                              	    <td class="val">
+                              	      50 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Горячие закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Выпечка
+                              	    </td>
+                              	    <td class="val">
+                              	      70 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Десерты
+                              	    </td>
+                              	    <td class="val">
+                              	      90 г
+                              	    </td>
+                              	  </tr>
+                                  <tr class="total">
+                              	    <td class="name">
+                              	      Общий вес
+                              	    </td>
+                              	    <td class="val">
+                              	      630 г
+                              	    </td>
+                              	  </tr>
+                              	</table>
+                              </div>
+                              <div class="result-table-col result-table-col-r">
+                                <table class="result-table">
+                                  <tr>
+                                    <td class="name">
+                                      Безалкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      450 мл
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="name">
+                                      Горячие напитки
+                                    </td>
+                                    <td class="val">
+                                      200 мл
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="result-table-cont fc">
+                              <div class="result-table-col result-table-col-l">
+                              	<table class="result-table">
+                              	  <tr>
+                              	    <td class="name">
+                              	      Канапе
+                              	    </td>
+                              	    <td class="val">
+                              	      80 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Холодные закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      150 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Тарталетки
+                              	    </td>
+                              	    <td class="val">
+                              	      45 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Салаты
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Горячие закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      140 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Карвинг станция
+                              	    </td>
+                              	    <td class="val">
+                              	      120 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Гарниры
+                              	    </td>
+                              	    <td class="val">
+                              	      90 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Выпечка
+                              	    </td>
+                              	    <td class="val">
+                              	      90 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Десерты
+                              	    </td>
+                              	    <td class="val">
+                              	      120 г
+                              	    </td>
+                              	  </tr>
+                                  <tr class="total">
+                              	    <td class="name">
+                              	      Общий вес
+                              	    </td>
+                              	    <td class="val">
+                              	      925 г
+                              	    </td>
+                              	  </tr>
+                              	</table>
+                              </div>
+                              <div class="result-table-col result-table-col-r">
+                                <table class="result-table">
+                                  <tr>
+                                    <td class="name">
+                                      Безалкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      750 мл
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="name">
+                                      Горячие напитки
+                                    </td>
+                                    <td class="val">
+                                      200 мл
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       	<div class="result-area fc">
                       	  <div class="ttl">Необходимая площадь площадки:</div>
                       	  <div class="val"><span class="area-val">0</span> м&sup2;</div>
                       	</div>
+                      	
+                      </div>
+                    </div>
+                	</div>
+                  <div class="calc-r">
+                    <div class="calc-results-2">
+                      <div class="calc-results-2-cont">
+                        <h3>Итого:</h3>
                       	<div class="result-personprice fc">
                       	  <div class="ttl">Стоимость<br />на человека:</div>
                       	  <div class="val"><span class="personprice-val">0</span> р.</div>
@@ -796,30 +1446,30 @@
                       	</div>
                       </div>
                     </div>
-                	</div>
-                  <div class="calc-r">
-                    <h3>
-                      <span>Закажите</span>кейтеринг сейчас
-                    </h3>
-                    <hr/>
-                    <div class="common-form order-form">
-                      <form action=".">
-                      	<div class="form-item errors-left">
-                      	  <label class="placeholder" for="order_2_name">Ваше имя</label>
-                      	  <input type="text" class="form-text" name="order_2_name" id="order_2_name" required />
-                      	</div>
-                      	<div class="form-item errors-left">
-                      	  <label class="placeholder" for="order_2_phone">Телефон</label>
-                      	  <input type="text" class="form-text form-phone" name="order_2_phone" id="order_2_phone" />
-                      	</div>
-                      	<div class="form-item errors-left">
-                      	  <label class="placeholder" for="order_2_email">E-mail</label>
-                      	  <input type="text" class="form-text form-email" name="order_2_email" id="order_2_email" />
-                      	</div>
-                      	<div class="form-footer">
-                      		<input type="submit" value="Заказать кейтеринг" class="form-submit button"/>
-                      	</div>
-                      </form>
+                    <div class="order-form-wrapper">
+                    	<h3>
+                    	  <span>Закажите</span>кейтеринг сейчас
+                    	</h3>
+                    	<hr/>
+                    	<div class="common-form order-form">
+                    	  <form action=".">
+                    	  	<div class="form-item errors-left">
+                    	  	  <label class="placeholder" for="order_2_name">Ваше имя</label>
+                    	  	  <input type="text" class="form-text" name="order_2_name" id="order_2_name" required />
+                    	  	</div>
+                    	  	<div class="form-item errors-left">
+                    	  	  <label class="placeholder" for="order_2_phone">Телефон</label>
+                    	  	  <input type="text" class="form-text form-phone" name="order_2_phone" id="order_2_phone" />
+                    	  	</div>
+                    	  	<div class="form-item errors-left">
+                    	  	  <label class="placeholder" for="order_2_email">E-mail</label>
+                    	  	  <input type="text" class="form-text form-email" name="order_2_email" id="order_2_email" />
+                    	  	</div>
+                    	  	<div class="form-footer">
+                    	  		<input type="submit" value="Заказать кейтеринг" class="form-submit button"/>
+                    	  	</div>
+                    	  </form>
+                    	</div>
                     </div>
                   </div>
                 </div>
@@ -832,17 +1482,18 @@
                       <div class="slider-item">
                         <div class="ttl">Количество человек</div>
                         <div class="slider-wrapper">
-                          <div class="calc-slider people-slider" areafactor="1.5"></div>
+                          <div class="calc-slider people-slider" areafactor="3"></div>
                           <div class="slider-labels">
                             <div class="slider-label-l">50</div>
-                            <div class="slider-label-r">5 000</div>
+                            <div class="slider-label-r">500</div>
                           </div>
                         </div>
                       </div>
                       <div class="slider-item">
                         <div class="ttl">Стоимость на человека, руб.</div>
-                        <div class="slider-wrapper">
-                          <div class="calc-slider price-slider"></div>
+                        <div class="slider-wrapper slider-wrapper-2">
+                          <div class="slider-scale"></div>
+                          <div class="calc-slider price-slider" prices="1600-2230-3100"></div>
                           <div class="slider-labels">
                             <div class="slider-label-l">Эконом</div>
                             <div class="slider-label-m">Бизнес</div>
@@ -853,10 +1504,309 @@
                     </div>
                     <div class="calc-results">
                       <div class="cont">
+                        <div class="result-menu">
+                          <div class="ttl">Вес блюд и объем напитков на одну персону</div>
+                          <div class="result-menu-cont">
+                            <div class="result-table-cont fc">
+                              <div class="result-table-col result-table-col-l">
+                              	<table class="result-table">
+                              	  <tr>
+                              	    <td class="name">
+                              	      Холодные закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      300 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Салаты
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Горячие блюда на углях
+                              	    </td>
+                              	    <td class="val">
+                              	      300 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Гарнир
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Соусная станция
+                              	    </td>
+                              	    <td class="val">
+                              	      40 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Фрукты
+                              	    </td>
+                              	    <td class="val">
+                              	      130 г
+                              	    </td>
+                              	  </tr>
+                                  <tr class="total">
+                              	    <td class="name">
+                              	      Общий вес
+                              	    </td>
+                              	    <td class="val">
+                              	      970 г
+                              	    </td>
+                              	  </tr>
+                              	</table>
+                              </div>
+                              <div class="result-table-col result-table-col-r">
+                                <table class="result-table">
+                                  <tr>
+                                    <td class="name">
+                                      Безалкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      750 мл
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="result-table-cont fc">
+                              <div class="result-table-col result-table-col-l">
+                              	<table class="result-table">
+                              	  <tr>
+                              	    <td class="name">
+                              	      Холодные закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      350 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Салаты
+                              	    </td>
+                              	    <td class="val">
+                              	      150 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Горячие блюда на углях
+                              	    </td>
+                              	    <td class="val">
+                              	      400 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Гарнир
+                              	    </td>
+                              	    <td class="val">
+                              	      150 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Соусная станция
+                              	    </td>
+                              	    <td class="val">
+                              	      50 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Хлебный стол
+                              	    </td>
+                              	    <td class="val">
+                              	      60 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Свежая выпечка
+                              	    </td>
+                              	    <td class="val">
+                              	      50 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Десертная станция
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Фрукты
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr class="total">
+                              	    <td class="name">
+                              	      Общий вес
+                              	    </td>
+                              	    <td class="val">
+                              	      1410 г
+                              	    </td>
+                              	  </tr>
+                              	</table>
+                              </div>
+                              <div class="result-table-col result-table-col-r">
+                                <table class="result-table">
+                                  <tr>
+                                    <td class="name">
+                                      Безалкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      950 мл
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="result-table-cont fc">
+                              <div class="result-table-col result-table-col-l">
+                              	<table class="result-table">
+                              	  <tr>
+                              	    <td class="name">
+                              	      Холодные закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      350 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Салаты
+                              	    </td>
+                              	    <td class="val">
+                              	      200 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Супы на пленере
+                              	    </td>
+                              	    <td class="val">
+                              	      200 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Вертельная станция
+                              	    </td>
+                              	    <td class="val">
+                              	      под заказ
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Горячие блюда на углях
+                              	    </td>
+                              	    <td class="val">
+                              	      500 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Гарнир
+                              	    </td>
+                              	    <td class="val">
+                              	      150 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Соусная станция
+                              	    </td>
+                              	    <td class="val">
+                              	      50 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Хлебный стол
+                              	    </td>
+                              	    <td class="val">
+                              	      50 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Свежая выпечка
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Десертная станция
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Фрукты
+                              	    </td>
+                              	    <td class="val">
+                              	      150 г
+                              	    </td>
+                              	  </tr>
+                                  <tr class="total">
+                              	    <td class="name">
+                              	      Общий вес
+                              	    </td>
+                              	    <td class="val">
+                              	      1850 г
+                              	    </td>
+                              	  </tr>
+                              	</table>
+                              </div>
+                              <div class="result-table-col result-table-col-r">
+                                <table class="result-table">
+                                  <tr>
+                                    <td class="name">
+                                      Безалкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      1350 мл
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       	<div class="result-area fc">
                       	  <div class="ttl">Необходимая площадь площадки:</div>
                       	  <div class="val"><span class="area-val">0</span> м&sup2;</div>
                       	</div>
+                      	
+                      </div>
+                    </div>
+                	</div>
+                  <div class="calc-r">
+                    <div class="calc-results-2">
+                      <div class="calc-results-2-cont">
+                        <h3>Итого:</h3>
                       	<div class="result-personprice fc">
                       	  <div class="ttl">Стоимость<br />на человека:</div>
                       	  <div class="val"><span class="personprice-val">0</span> р.</div>
@@ -867,30 +1817,30 @@
                       	</div>
                       </div>
                     </div>
-                	</div>
-                  <div class="calc-r">
-                    <h3>
-                      <span>Закажите</span>кейтеринг сейчас
-                    </h3>
-                    <hr/>
-                    <div class="common-form order-form">
-                      <form action=".">
-                      	<div class="form-item errors-left">
-                      	  <label class="placeholder" for="order_3_name">Ваше имя</label>
-                      	  <input type="text" class="form-text" name="order_3_name" id="order_3_name" required />
-                      	</div>
-                      	<div class="form-item errors-left">
-                      	  <label class="placeholder" for="order_3_phone">Телефон</label>
-                      	  <input type="text" class="form-text form-phone" name="order_3_phone" id="order_3_phone" />
-                      	</div>
-                      	<div class="form-item errors-left">
-                      	  <label class="placeholder" for="order_3_email">E-mail</label>
-                      	  <input type="text" class="form-text form-email" name="order_3_email" id="order_3_email" />
-                      	</div>
-                      	<div class="form-footer">
-                      		<input type="submit" value="Заказать кейтеринг" class="form-submit button"/>
-                      	</div>
-                      </form>
+                    <div class="order-form-wrapper">
+                    	<h3>
+                    	  <span>Закажите</span>кейтеринг сейчас
+                    	</h3>
+                    	<hr/>
+                    	<div class="common-form order-form">
+                    	  <form action=".">
+                    	  	<div class="form-item errors-left">
+                    	  	  <label class="placeholder" for="order_3_name">Ваше имя</label>
+                    	  	  <input type="text" class="form-text" name="order_3_name" id="order_3_name" required />
+                    	  	</div>
+                    	  	<div class="form-item errors-left">
+                    	  	  <label class="placeholder" for="order_3_phone">Телефон</label>
+                    	  	  <input type="text" class="form-text form-phone" name="order_3_phone" id="order_3_phone" />
+                    	  	</div>
+                    	  	<div class="form-item errors-left">
+                    	  	  <label class="placeholder" for="order_3_email">E-mail</label>
+                    	  	  <input type="text" class="form-text form-email" name="order_3_email" id="order_3_email" />
+                    	  	</div>
+                    	  	<div class="form-footer">
+                    	  		<input type="submit" value="Заказать кейтеринг" class="form-submit button"/>
+                    	  	</div>
+                    	  </form>
+                    	</div>
                     </div>
                   </div>
                 </div>
@@ -903,17 +1853,18 @@
                       <div class="slider-item">
                         <div class="ttl">Количество человек</div>
                         <div class="slider-wrapper">
-                          <div class="calc-slider people-slider" areafactor="1.5"></div>
+                          <div class="calc-slider people-slider" areafactor="1.6"></div>
                           <div class="slider-labels">
                             <div class="slider-label-l">50</div>
-                            <div class="slider-label-r">5 000</div>
+                            <div class="slider-label-r">500</div>
                           </div>
                         </div>
                       </div>
                       <div class="slider-item">
                         <div class="ttl">Стоимость на человека, руб.</div>
-                        <div class="slider-wrapper">
-                          <div class="calc-slider price-slider"></div>
+                        <div class="slider-wrapper slider-wrapper-2">
+                          <div class="slider-scale"></div>
+                          <div class="calc-slider price-slider" prices="300-550-770"></div>
                           <div class="slider-labels">
                             <div class="slider-label-l">Эконом</div>
                             <div class="slider-label-m">Бизнес</div>
@@ -924,10 +1875,229 @@
                     </div>
                     <div class="calc-results">
                       <div class="cont">
+                        <div class="result-menu">
+                          <div class="ttl">Вес блюд и объем напитков на одну персону</div>
+                          <div class="result-menu-cont">
+                            <div class="result-table-cont fc">
+                              <div class="result-table-col result-table-col-l">
+                              	<table class="result-table">
+                                  <tr>
+                              	    <td class="name">
+                              	      Сэндвичи
+                              	    </td>
+                              	    <td class="val">
+                              	      120 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Свежая выпечка
+                              	    </td>
+                              	    <td class="val">
+                              	      50 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Десерты
+                              	    </td>
+                              	    <td class="val">
+                              	      50 г
+                              	    </td>
+                              	  </tr>
+                                  <tr class="total">
+                              	    <td class="name">
+                              	      Общий вес
+                              	    </td>
+                              	    <td class="val">
+                              	      220 г
+                              	    </td>
+                              	  </tr>
+                              	</table>
+                              </div>
+                              <div class="result-table-col result-table-col-r">
+                                <table class="result-table">
+                                  <tr>
+                                    <td class="name">
+                                      Безалкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      120 мл
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="name">
+                                      Горячие напитки
+                                    </td>
+                                    <td class="val">
+                                      200 мл
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="result-table-cont fc">
+                              <div class="result-table-col result-table-col-l">
+                              	<table class="result-table">
+                              	  <tr>
+                              	    <td class="name">
+                              	      Мини-закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      95 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Сэндвичи
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Свежая выпечка
+                              	    </td>
+                              	    <td class="val">
+                              	      90 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Десерты
+                              	    </td>
+                              	    <td class="val">
+                              	      80 г
+                              	    </td>
+                              	  </tr>
+                                  <tr class="total">
+                              	    <td class="name">
+                              	      Общий вес
+                              	    </td>
+                              	    <td class="val">
+                              	      365 г
+                              	    </td>
+                              	  </tr>
+                              	</table>
+                              </div>
+                              <div class="result-table-col result-table-col-r">
+                                <table class="result-table">
+                                  <tr>
+                                    <td class="name">
+                                      Безалкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      300 мл
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="name">
+                                      Горячие напитки
+                                    </td>
+                                    <td class="val">
+                                      200 мл
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="result-table-cont fc">
+                              <div class="result-table-col result-table-col-l">
+                              	<table class="result-table">
+                              	  <tr>
+                              	    <td class="name">
+                              	      Мини-закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      50 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Сэндвичи
+                              	    </td>
+                              	    <td class="val">
+                              	      150 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Горячие закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Свежая выпечка
+                              	    </td>
+                              	    <td class="val">
+                              	      120 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Фрукты
+                              	    </td>
+                              	    <td class="val">
+                              	      50 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Десерты
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                                  <tr class="total">
+                              	    <td class="name">
+                              	      Общий вес
+                              	    </td>
+                              	    <td class="val">
+                              	      570 г
+                              	    </td>
+                              	  </tr>
+                              	</table>
+                              </div>
+                              <div class="result-table-col result-table-col-r">
+                                <table class="result-table">
+                                  <tr>
+                                    <td class="name">
+                                      Безалкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      320 мл
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="name">
+                                      Горячие напитки
+                                    </td>
+                                    <td class="val">
+                                      400 мл
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       	<div class="result-area fc">
                       	  <div class="ttl">Необходимая площадь площадки:</div>
                       	  <div class="val"><span class="area-val">0</span> м&sup2;</div>
                       	</div>
+                      	
+                      </div>
+                    </div>
+                	</div>
+                  <div class="calc-r">
+                    <div class="calc-results-2">
+                      <div class="calc-results-2-cont">
+                        <h3>Итого:</h3>
                       	<div class="result-personprice fc">
                       	  <div class="ttl">Стоимость<br />на человека:</div>
                       	  <div class="val"><span class="personprice-val">0</span> р.</div>
@@ -938,30 +2108,30 @@
                       	</div>
                       </div>
                     </div>
-                	</div>
-                  <div class="calc-r">
-                    <h3>
-                      <span>Закажите</span>кейтеринг сейчас
-                    </h3>
-                    <hr/>
-                    <div class="common-form order-form">
-                      <form action=".">
-                      	<div class="form-item errors-left">
-                      	  <label class="placeholder" for="order_4_name">Ваше имя</label>
-                      	  <input type="text" class="form-text" name="order_4_name" id="order_4_name" required />
-                      	</div>
-                      	<div class="form-item errors-left">
-                      	  <label class="placeholder" for="order_4_phone">Телефон</label>
-                      	  <input type="text" class="form-text form-phone" name="order_4_phone" id="order_4_phone" />
-                      	</div>
-                      	<div class="form-item errors-left">
-                      	  <label class="placeholder" for="order_4_email">E-mail</label>
-                      	  <input type="text" class="form-text form-email" name="order_4_email" id="order_4_email" />
-                      	</div>
-                      	<div class="form-footer">
-                      		<input type="submit" value="Заказать кейтеринг" class="form-submit button"/>
-                      	</div>
-                      </form>
+                    <div class="order-form-wrapper">
+                    	<h3>
+                    	  <span>Закажите</span>кейтеринг сейчас
+                    	</h3>
+                    	<hr/>
+                    	<div class="common-form order-form">
+                    	  <form action=".">
+                    	  	<div class="form-item errors-left">
+                    	  	  <label class="placeholder" for="order_4_name">Ваше имя</label>
+                    	  	  <input type="text" class="form-text" name="order_4_name" id="order_4_name" required />
+                    	  	</div>
+                    	  	<div class="form-item errors-left">
+                    	  	  <label class="placeholder" for="order_4_phone">Телефон</label>
+                    	  	  <input type="text" class="form-text form-phone" name="order_4_phone" id="order_4_phone" />
+                    	  	</div>
+                    	  	<div class="form-item errors-left">
+                    	  	  <label class="placeholder" for="order_4_email">E-mail</label>
+                    	  	  <input type="text" class="form-text form-email" name="order_4_email" id="order_4_email" />
+                    	  	</div>
+                    	  	<div class="form-footer">
+                    	  		<input type="submit" value="Заказать кейтеринг" class="form-submit button"/>
+                    	  	</div>
+                    	  </form>
+                    	</div>
                     </div>
                   </div>
                 </div>
@@ -977,14 +2147,15 @@
                           <div class="calc-slider people-slider" areafactor="1.5"></div>
                           <div class="slider-labels">
                             <div class="slider-label-l">50</div>
-                            <div class="slider-label-r">5 000</div>
+                            <div class="slider-label-r">500</div>
                           </div>
                         </div>
                       </div>
                       <div class="slider-item">
                         <div class="ttl">Стоимость на человека, руб.</div>
-                        <div class="slider-wrapper">
-                          <div class="calc-slider price-slider"></div>
+                        <div class="slider-wrapper slider-wrapper-2">
+                          <div class="slider-scale"></div>
+                          <div class="calc-slider price-slider" prices="350-720-1000"></div>
                           <div class="slider-labels">
                             <div class="slider-label-l">Эконом</div>
                             <div class="slider-label-m">Бизнес</div>
@@ -995,10 +2166,181 @@
                     </div>
                     <div class="calc-results">
                       <div class="cont">
+                        <div class="result-menu">
+                          <div class="ttl">Вес блюд и объем напитков на одну персону</div>
+                          <div class="result-menu-cont">
+                            <div class="result-table-cont fc">
+                              <div class="result-table-col result-table-col-l">
+                              	<table class="result-table">
+                              	  <tr>
+                              	    <td class="name">
+                              	      Холодные закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      75 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Десерты
+                              	    </td>
+                              	    <td class="val">
+                              	      25 г
+                              	    </td>
+                              	  </tr>
+                                  <tr class="total">
+                              	    <td class="name">
+                              	      Общий вес
+                              	    </td>
+                              	    <td class="val">
+                              	      100 г
+                              	    </td>
+                              	  </tr>
+                              	</table>
+                              </div>
+                              <div class="result-table-col result-table-col-r">
+                                <table class="result-table">
+                                  <tr>
+                                    <td class="name">
+                                      Безалкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      150 мл
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="result-table-cont fc">
+                              <div class="result-table-col result-table-col-l">
+                              	<table class="result-table">
+                              	  <tr>
+                              	    <td class="name">
+                              	      Холодные закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      95 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Десерты
+                              	    </td>
+                              	    <td class="val">
+                              	      50 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Шампанское
+                              	    </td>
+                              	    <td class="val">
+                              	      150 г
+                              	    </td>
+                              	  </tr>
+                                  <tr class="total">
+                              	    <td class="name">
+                              	      Общий вес
+                              	    </td>
+                              	    <td class="val">
+                              	      145 г
+                              	    </td>
+                              	  </tr>
+                              	</table>
+                              </div>
+                              <div class="result-table-col result-table-col-r">
+                                <table class="result-table">
+                                  <tr>
+                                    <td class="name">
+                                      Безалкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      150 мл
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="name">
+                                      Алкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      150 мл
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="result-table-cont fc">
+                              <div class="result-table-col result-table-col-l">
+                              	<table class="result-table">
+                              	  <tr>
+                              	    <td class="name">
+                              	      Холодные закуски
+                              	    </td>
+                              	    <td class="val">
+                              	      95 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Десерты
+                              	    </td>
+                              	    <td class="val">
+                              	      50 г
+                              	    </td>
+                              	  </tr>
+                                  <tr>
+                              	    <td class="name">
+                              	      Шампанское
+                              	    </td>
+                              	    <td class="val">
+                              	      150 г
+                              	    </td>
+                              	  </tr>
+                                  <tr class="total">
+                              	    <td class="name">
+                              	      Общий вес
+                              	    </td>
+                              	    <td class="val">
+                              	      145 г
+                              	    </td>
+                              	  </tr>
+                              	</table>
+                              </div>
+                              <div class="result-table-col result-table-col-r">
+                                <table class="result-table">
+                                  <tr>
+                                    <td class="name">
+                                      Безалкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      150 мл
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="name">
+                                      Алкогольные напитки
+                                    </td>
+                                    <td class="val">
+                                      150 мл
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       	<div class="result-area fc">
                       	  <div class="ttl">Необходимая площадь площадки:</div>
                       	  <div class="val"><span class="area-val">0</span> м&sup2;</div>
                       	</div>
+                      	
+                      </div>
+                    </div>
+                	</div>
+                  <div class="calc-r">
+                    <div class="calc-results-2">
+                      <div class="calc-results-2-cont">
+                        <h3>Итого:</h3>
                       	<div class="result-personprice fc">
                       	  <div class="ttl">Стоимость<br />на человека:</div>
                       	  <div class="val"><span class="personprice-val">0</span> р.</div>
@@ -1009,30 +2351,30 @@
                       	</div>
                       </div>
                     </div>
-                	</div>
-                  <div class="calc-r">
-                    <h3>
-                      <span>Закажите</span>кейтеринг сейчас
-                    </h3>
-                    <hr/>
-                    <div class="common-form order-form">
-                      <form action=".">
-                      	<div class="form-item errors-left">
-                      	  <label class="placeholder" for="order_5_name">Ваше имя</label>
-                      	  <input type="text" class="form-text" name="order_5_name" id="order_5_name" required />
-                      	</div>
-                      	<div class="form-item errors-left">
-                      	  <label class="placeholder" for="order_5_phone">Телефон</label>
-                      	  <input type="text" class="form-text form-phone" name="order_5_phone" id="order_5_phone" />
-                      	</div>
-                      	<div class="form-item errors-left">
-                      	  <label class="placeholder" for="order_5_email">E-mail</label>
-                      	  <input type="text" class="form-text form-email" name="order_5_email" id="order_5_email" />
-                      	</div>
-                      	<div class="form-footer">
-                      		<input type="submit" value="Заказать кейтеринг" class="form-submit button"/>
-                      	</div>
-                      </form>
+                    <div class="order-form-wrapper">
+                    	<h3>
+                    	  <span>Закажите</span>кейтеринг сейчас
+                    	</h3>
+                    	<hr/>
+                    	<div class="common-form order-form">
+                    	  <form action=".">
+                    	  	<div class="form-item errors-left">
+                    	  	  <label class="placeholder" for="order_5_name">Ваше имя</label>
+                    	  	  <input type="text" class="form-text" name="order_5_name" id="order_5_name" required />
+                    	  	</div>
+                    	  	<div class="form-item errors-left">
+                    	  	  <label class="placeholder" for="order_5_phone">Телефон</label>
+                    	  	  <input type="text" class="form-text form-phone" name="order_5_phone" id="order_5_phone" />
+                    	  	</div>
+                    	  	<div class="form-item errors-left">
+                    	  	  <label class="placeholder" for="order_5_email">E-mail</label>
+                    	  	  <input type="text" class="form-text form-email" name="order_5_email" id="order_5_email" />
+                    	  	</div>
+                    	  	<div class="form-footer">
+                    	  		<input type="submit" value="Заказать кейтеринг" class="form-submit button"/>
+                    	  	</div>
+                    	  </form>
+                    	</div>
                     </div>
                   </div>
                 </div>

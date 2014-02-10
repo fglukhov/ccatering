@@ -525,7 +525,7 @@ dl:after,
 }
 
 .block-calc {
-  height:652px;
+  min-height:855px;
   padding:58px 0 0 0;
   background:#78cbd2 url(images/calc-bg.png) center top no-repeat;
   background-size:cover;
@@ -616,8 +616,10 @@ dl:after,
 
 .calc-l {
   width:570px;
+  min-height:548px;
   margin:0 10px 0 0;
   float:left;
+  background: #f3f1f1;
 }
 
 .calc-r {
@@ -625,7 +627,6 @@ dl:after,
   float:left;
   width:379px;
   height:339px;
-  background:url(images/order-form-bg.png) 0 0 no-repeat;
 }
 
 .calc-r h3 {
@@ -655,14 +656,19 @@ dl:after,
   margin:0 auto 21px auto;
 }
 
+.order-form-wrapper {
+  width:379px;
+  height:339px;
+  background:url(images/order-form-bg.png) 0 0 no-repeat;
+}
+
 .order-form {
   padding:0 30px;
 }
 
 .calc-sliders {
-  background: #f3f1f1;
   padding: 24px 30px 0 30px;
-  margin: 0 0 10px 0;
+  margin: 0 0 3px 0;
   height: 195px;
 }
 
@@ -673,6 +679,10 @@ dl:after,
   position:relative;
 }
 
+.calc-sliders .slider-wrapper-2 {
+  background:url(images/slider-2-bg.png) 0 0 no-repeat;
+}
+
 .ui-slider {
   width:435px;
   height:14px;
@@ -681,6 +691,10 @@ dl:after,
 .ui-slider-range {
   height:14px;
   background:url(images/slider-range-bg.png) 0 0 no-repeat;
+}
+
+.price-slider .ui-slider-range {
+  background:url(images/slider-range-2-bg.png) 0 0 no-repeat;
 }
 
 .ui-slider-handle {
@@ -702,15 +716,124 @@ dl:after,
 
 .calc-results {
   height:109px;
-  background:url(images/calc-results-bg.png) 0 0 no-repeat;
+  /* background:url(images/calc-results-bg.png) 0 0 no-repeat; */
 }
 
 .calc-results .cont {
-  padding:18px 30px 0 30px;
+  padding:0 30px 0 30px;
   font-family:'octavaregular',serif;
 }
 
+.calc-results .result-menu-cont {
+  border: 1px solid #ded9d9;
+  font-family: Arial,sans-serif;
+  font-size: 13px;
+  line-height: 14px;
+  color: #454545;
+  padding: 0 0 10px 0;
+  margin: 0 0 14px 0;
+}
+
+.calc-results .result-table-col {
+  float:left;
+}
+
+.calc-results .result-table-col-l {
+  float: left;
+  border-right: 1px solid #ded9d9;
+  margin: 10px 0 0 10px;
+  width: 260px;
+  padding: 0 15px 0 0;
+}
+
+.calc-results .result-table-col-r {
+  float: left;
+  width: 180px;
+  margin: 10px 0 0 20px;
+}
+
+.calc-results .result-table .name {
+  padding: 0 0 5px 10px;
+  vertical-align: top;
+  width: 100%;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.calc-results .result-table .val {
+  padding: 0 0 5px 10px;
+  white-space: nowrap;
+  color: #090601;
+  vertical-align: top;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.calc-results .result-table .total td {
+  font-family: 'octavaregular';
+  font-size: 16px;
+  line-height: 18px;
+  white-space: nowrap;
+  color: #090601 !important;
+  padding-top: 5px;
+  padding-bottom: 0;
+}
+
+.calc-results .result-area {
+  padding:0 0 0 0;
+}
+
+.calc-results .result-area div {
+  display:inline;
+}
+
+.calc-results .result-area .ttl {
+  color:#454545;
+}
+
+.calc-results .result-area .val {
+  color:#090601;
+  padding-left:3px;
+}
+
+.calc-results .result-area .val span {
+  font-size:18px;
+}
+
 .calc-results .ttl {
+  font-family: 'octavaregular',serif;
+  color: #090601;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0 0 5px 0;
+}
+
+.calc-results-2 {
+  font-family: 'octavaregular',serif;
+  color: #090601;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0 0 10px 0;
+  width:379px;
+  height:199px;
+  background:url(images/calc-results-2-bg.png) 0 0 no-repeat;
+}
+
+.calc-results-2-cont {
+  padding:27px 0 0 48px;
+}
+
+.calc-results-2 h3 {
+  color:#3c2f2f;
+  font-size:24px;
+  line-height:26px;
+  margin:0 0 15px 0;
+  padding:0;
+  text-align:left;
+  text-transform:none;
+}
+
+.calc-results-2 .ttl {
   color:#387c80;
   font-size:14px;
   line-height:16px;
@@ -726,35 +849,39 @@ dl:after,
   white-space:nowrap;
 }
 
-.calc-results .result-personprice,
-.calc-results .result-total {
+.calc-results-2 .val {
   font-size:16px;
+  line-height:40px;
+  color:#3c2f2f;
+  overflow:hidden;
+  white-space:nowrap;
 }
 
-.calc-results .result-personprice .ttl,
-.calc-results .result-total .ttl {
+.calc-results-2 .result-personprice,
+.calc-results-2 .result-total {
+  font-size:40px;
+  
+}
+
+.calc-results-2 .result-personprice .ttl,
+.calc-results-2 .result-total .ttl {
   padding-top:6px;
   margin-right:15px;
+  width:93px;
 }
 
-.calc-results .result-area {
-  padding:0 0 18px 0;
+.calc-results-2 .result-personprice {
+  margin:0 0 6px 0;
 }
 
-.calc-results .result-personprice {
-  float:left;
-  width:207px;
-  margin:0 20px 0 0;
-}
-
-.calc-results .result-total {
+.calc-results-2 .result-total {
   overflow:hidden;
 }
 
-.calc-results .personprice-val,
-.calc-results .price-val {
-  font-size:36px;
-  line-height:42px;
+.calc-results-2 .personprice-val,
+.calc-results-2 .price-val {
+  font-size:40px;
+  line-height:40px;
 }
 
 .calc-sliders .ttl {
