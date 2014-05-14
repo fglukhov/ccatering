@@ -160,6 +160,7 @@ dl:after,
 
 .top-wrap {
   background:url(../images/page-top-bg.png) center 0 no-repeat;
+	overflow:hidden;
 }
 
 .center-wrapper {
