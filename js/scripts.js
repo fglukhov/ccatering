@@ -24,27 +24,32 @@ $(document).ready(function () {
 
 	// Наши преимущества, попапы
 	
-	$(".pros-item .descr").click(function() {
+	$(".pros-item .descr, .pros-item .pic").click(function() {
 		var tooltip = $(this).parents(".pros-item").find(".pros-tooltip");
 		
 		$(".pros-item .pros-tooltip").hide();
+		$(".pros-item-act").removeClass("pros-item-act");
 		
 		tooltip.fadeIn(200);
+		
+		$(this).parents(".pros-item").addClass("pros-item-act")
 		
 	});
 	
 	$(".pros-tooltip .close").click(function() {
 		$(this).parents(".pros-tooltip").fadeOut(150);
+		$(this).parents(".pros-item").removeClass("pros-item-act");
 	});
 	
 	$(document).mouseup(function (e) {
     var container1 = $(".pros-tooltip");
-    var container2 = $(".pros-item .descr");
+    var container2 = $(".pros-item .descr, .pros-item .pic");
 
     if (!container1.is(e.target) && !container2.is(e.target) // if the target of the click isn't the container...
         && container1.has(e.target).length === 0 && container2.has(e.target).length === 0) // ... nor a descendant of the container
     {
-        container1.fadeOut(150)
+        container1.fadeOut(150);
+				$(".pros-item-act").removeClass("pros-item-act");
     }
   });
 
