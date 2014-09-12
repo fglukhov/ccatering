@@ -1,43 +1,43 @@
 ﻿@font-face {
     font-family: 'octavaregular';
-    src: url('../fonts/oct55-webfont.eot');
-    src: url('../fonts/oct55-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/oct55-webfont.woff') format('woff'),
-         url('../fonts/oct55-webfont.ttf') format('truetype'),
-         url('../fonts/oct55-webfont.svg#octavaregular') format('svg');
+    src: url('fonts/oct55-webfont.eot');
+    src: url('fonts/oct55-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/oct55-webfont.woff') format('woff'),
+         url('fonts/oct55-webfont.ttf') format('truetype'),
+         url('fonts/oct55-webfont.svg#octavaregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'octavaitalic';
-    src: url('../fonts/oct56-webfont.eot');
-    src: url('../fonts/oct56-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/oct56-webfont.woff') format('woff'),
-         url('../fonts/oct56-webfont.ttf') format('truetype'),
-         url('../fonts/oct56-webfont.svg#octavaitalic') format('svg');
+    src: url('fonts/oct56-webfont.eot');
+    src: url('fonts/oct56-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/oct56-webfont.woff') format('woff'),
+         url('fonts/oct56-webfont.ttf') format('truetype'),
+         url('fonts/oct56-webfont.svg#octavaitalic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'octavabold';
-    src: url('../fonts/oct85-webfont.eot');
-    src: url('../fonts/oct85-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/oct85-webfont.woff') format('woff'),
-         url('../fonts/oct85-webfont.ttf') format('truetype'),
-         url('../fonts/oct85-webfont.svg#octavabold') format('svg');
+    src: url('fonts/oct85-webfont.eot');
+    src: url('fonts/oct85-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/oct85-webfont.woff') format('woff'),
+         url('fonts/oct85-webfont.ttf') format('truetype'),
+         url('fonts/oct85-webfont.svg#octavabold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'octavabold_italic';
-    src: url('../fonts/oct86-webfont.eot');
-    src: url('../fonts/oct86-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/oct86-webfont.woff') format('woff'),
-         url('../fonts/oct86-webfont.ttf') format('truetype'),
-         url('../fonts/oct86-webfont.svg#octavabold_italic') format('svg');
+    src: url('fonts/oct86-webfont.eot');
+    src: url('fonts/oct86-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/oct86-webfont.woff') format('woff'),
+         url('fonts/oct86-webfont.ttf') format('truetype'),
+         url('fonts/oct86-webfont.svg#octavabold_italic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -48,7 +48,7 @@ body, html {
   font-size:13px;
   line-height:18px;
   color:#3a2e2e;
-  min-width:1040px;
+  min-width:1000px;
 }
 
 h2 {
@@ -160,12 +160,11 @@ dl:after,
 
 .top-wrap {
   background:url(images/page-top-bg.png) center 0 no-repeat;
-	overflow:hidden;
 }
 
 .center-wrapper {
   width:980px;
-  padding:0 30px;
+  padding:0 10px;
   margin:0 auto;
 }
 
@@ -1230,7 +1229,6 @@ dl:after,
 .menu-slider {
   position:relative;
   width:994px;
-	left:-7px;
 }
 
 .menu-slider .slides {
@@ -1852,6 +1850,7 @@ dl:after,
 	padding:8px 0 0 0;
 }
 
+
 /* Наши преимущества, попапы */
 
 .pros-item {
@@ -1859,6 +1858,10 @@ dl:after,
 	cursor:pointer;
 }
 
+.u-eip-sortable .pros-tooltip{
+	display:block;
+	position: static;
+}
 .pros-tooltip {
   position: absolute;
 	right: 27px;
@@ -1934,3 +1937,344 @@ dl:after,
 }
 
 /* Наши преимущества, попапы END */
+
+.block-cases {
+  background: url(images/hr-wave.png) center 0 no-repeat;
+	padding: 76px 0;
+	margin: -16px 0 0 0;
+}
+
+.block-cases h2 {
+  color:#090601;
+	font-size:34px;
+	margin:0 0 8px 0;
+}
+
+.cases-slider {
+  position:relative;
+	padding:62px 0 0 0;
+	margin:0 0 23px 0;
+}
+
+.cases-slider .slides {
+  width:980px;
+	height:539px;
+	position:relative;
+}
+
+.cases-slider .slide {
+  position:absolute;
+	left:0;
+	top:0;
+	width:980px;
+	height:539px;
+}
+
+.cases-slider .prev {
+  width:42px;
+	height:42px;
+	background:url(images/cases-arrows-1.png) 0 0 no-repeat;
+	position:absolute;
+	left:0;
+	top:0;
+	cursor:pointer;
+}
+
+.cases-slider .prev:hover {
+  background-position:0 -42px;
+}
+
+.cases-slider .next {
+  width:42px;
+	height:42px;
+	background:url(images/cases-arrows-1.png) -42px 0 no-repeat;
+	position:absolute;
+	right:0;
+	top:0;
+	cursor:pointer;
+}
+
+.cases-slider .prev span,
+.cases-slider .next span {
+	font-family:'Georgia';
+  position:absolute;
+	font-size:17px;
+	line-height:24px;
+	color:#3abbc4;
+	background:url(images/ul-dashed-blue.png) 0 20px repeat-x;
+}
+
+.cases-slider .prev:hover span,
+.cases-slider .next:hover span {
+	background:none;
+}
+
+.cases-slider .prev span {
+  left: 54px;
+	top: 7px;
+}
+
+.cases-slider .next span {
+  right: 54px;
+	top: 7px;
+}
+
+.cases-slider .next:hover {
+  background-position:-42px -42px;
+}
+
+.cases-slider .lister {
+  width:724px;
+	position:absolute;
+	left:50%;
+	top:10px;
+	margin-left:-362px;
+	text-align:center;
+}
+
+.cases-slider .lister-item {
+  width:25px;
+	height:25px;
+	display:inline-block;
+	background:url(images/cases-bullets.png) 5px 5px no-repeat;
+	cursor:pointer;
+}
+
+.cases-slider .lister .act {
+  background-position:-19px 5px;
+	cursor:default;
+}
+
+.cases-slider .slide-descr {
+  width:292px;
+	height:539px;
+	background:url(images/case-descr-bg-1.png) 0 0 no-repeat;
+	float:left;
+	margin:0 8px 0 0;
+	position:relative;
+}
+
+.cases-slider-alt .slide-descr {
+  float:right;
+	margin:0 0 0 8px;
+	background:url(images/case-descr-bg-2.png) 0 0 no-repeat;
+}
+
+.cases-slider .slide-gallery {
+  float:left;
+	width:680px;
+	height:539px;
+	position:relative;
+}
+
+.cases-slider-alt .slide-gallery {
+  float:right;
+}
+
+.cases-slider .descr-cont {
+  padding: 57px 30px 0 30px;
+	color: #090601;
+	font-family: 'Arial',sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	height: 310px;
+	overflow: hidden;
+	font-style:italic;
+}
+
+.cases-slider-alt .descr-cont {
+  color:#fff;
+}
+
+.cases-slider .descr-cont p {
+  margin:0 0 10px 0;
+}
+
+.cases-slider .descr-cont h3 {
+  font-size:24px;
+	line-height:24px;
+	font-family:'Georgia',serif;
+	margin:0 0 22px 0;
+	font-style:normal;
+}
+
+.cases-slider .descr-author {
+  width: 232px;
+	position: absolute;
+	left: 0;
+	bottom: 36px;
+	border-top: 1px solid #fff;
+	margin: 0 30px;
+	text-align: center;
+	padding: 20px 0 0 0;
+}
+
+.cases-slider-alt .descr-author {
+  border-color:#907474;
+}
+
+.cases-slider .descr-author .pic {
+  width: 168px;
+	height: 63px;
+	background: url(images/case-author-bg-1.png) 0 0 no-repeat;
+	margin: 0 auto;
+	text-align: center;
+	padding: 7px 0 8px 0;
+}
+
+.cases-slider-alt .descr-author .pic {
+	background: url(images/case-author-bg-2.png) 0 0 no-repeat;
+}
+
+.cases-slider .descr-author .pic img {
+	width:60px;
+	height:60px;
+	border-radius:30px;
+}
+
+.cases-slider .descr-author .name {
+  font-family: 'Georgia',serif;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: .025em;
+}
+
+.cases-slider-alt .descr-author .name {
+  color:#fff;
+}
+
+.slide-gallery .gal-pic {
+  width:679px;
+	height:400px;
+	margin:0 0 8px 0;
+	overflow:hidden;
+}
+
+.slide-gallery .gal-pic img {
+  width:680px;
+	height:400px;
+	display:block;
+}
+
+.slide-gallery .gal-thumbs {
+  margin:0 -8px 0 0;
+}
+
+.slide-gallery .gal-thumbs img {
+  width:221px;
+	height:131px;
+	margin:0 8px 0 0;
+	display:block;
+	float:left;
+	cursor:pointer;
+}
+
+.slide-gallery .gal-prev {
+  width:47px;
+	height:47px;
+	background:url(images/cases-arrows-2.png) 0 0 no-repeat;
+	position:absolute;
+	left:20px;
+	top:50%;
+	margin-top:-80px;
+	cursor:pointer;
+}
+
+.slide-gallery .gal-prev:hover {
+  background-position:0 -47px;
+}
+
+.slide-gallery .gal-next {
+  width:47px;
+	height:47px;
+	background:url(images/cases-arrows-2.png) -47px 0 no-repeat;
+	position:absolute;
+	right:20px;
+	top:50%;
+	margin-top:-80px;
+	cursor:pointer;
+}
+
+.slide-gallery .gal-next:hover {
+  background-position:-47px -47px;
+}
+
+.slide-gallery .cn-lt {
+  width:41px;
+	height:37px;
+	background:url(images/cn-lt.png) 0 0 no-repeat;
+	position:absolute;
+	left:0;
+	top:0;
+}
+
+.slide-gallery .cn-rt {
+  width:41px;
+	height:37px;
+	background:url(images/cn-rt.png) 0 0 no-repeat;
+	position:absolute;
+	right:0;
+	top:0;
+}
+
+.slide-gallery .cn-rb {
+  width:41px;
+	height:37px;
+	background:url(images/cn-rb.png) 0 0 no-repeat;
+	position:absolute;
+	right:0;
+	bottom:0;
+}
+
+.slide-gallery .cn-lb {
+  width:41px;
+	height:37px;
+	background:url(images/cn-lb.png) 0 0 no-repeat;
+	position:absolute;
+	left:0;
+	bottom:0;
+}
+
+.cases-ttl {
+  font-family: 'octavaregular',sans-serif;
+	font-weight: normal;
+	color: #3abbc4;
+	text-transform: uppercase;
+	letter-spacing: .025em;
+	font-size: 30px;
+	line-height: 30px;
+	background: url(images/hr-wave.png) center 79px no-repeat;
+	padding: 0;
+	margin: 0 0 13px 0;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.cases-ttl span {
+  background: #fff;
+	padding: 68px 15px 0 15px;
+	background-position: center 0;
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
+.cases-ttl-banket span {
+  background-image:url(images/ico-banket.png);
+}
+
+.cases-ttl-furshet span {
+  background-image:url(images/ico-furshet.png);
+}
+
+.cases-ttl-bbq span {
+  background-image:url(images/ico-bbq.png);
+}
+
+.cases-ttl-coffee span {
+  background-image:url(images/ico-coffe.png);
+}
+
+.cases-ttl-cocktail span {
+  background-image:url(images/ico-cocktail.png);
+}

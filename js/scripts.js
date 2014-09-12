@@ -22,25 +22,35 @@ $(window).scroll(function() {
 
 $(document).ready(function () {
 
-	// Наши преимущества, попапы
+	// Слайдер кейсов
 	
-	$(".pros-item .descr, .pros-item .pic").click(function() {
-		var tooltip = $(this).parents(".pros-item").find(".pros-tooltip");
-		
-		$(".pros-item .pros-tooltip").hide();
-		$(".pros-item-act").removeClass("pros-item-act");
-		
-		tooltip.fadeIn(200);
-		
-		$(this).parents(".pros-item").addClass("pros-item-act")
-		
+	$(".cases-slider").each(function() {
+		$(this).casesSlider()
+	});
+
+	$(".slide-gallery").each(function() {
+		$(this).slideGallery();
 	});
 	
+	// Наши преимущества, попапы
+
+	$(".pros-item .descr, .pros-item .pic").click(function() {
+		var tooltip = $(this).parents(".pros-item").find(".pros-tooltip");
+		if($(tooltip).find('.tooltip-content').text()=='') return true;
+		$(".pros-item .pros-tooltip").hide();
+		$(".pros-item-act").removeClass("pros-item-act");
+
+		tooltip.fadeIn(200);
+
+		$(this).parents(".pros-item").addClass("pros-item-act")
+
+	});
+
 	$(".pros-tooltip .close").click(function() {
 		$(this).parents(".pros-tooltip").fadeOut(150);
 		$(this).parents(".pros-item").removeClass("pros-item-act");
 	});
-	
+
 	$(document).mouseup(function (e) {
     var container1 = $(".pros-tooltip");
     var container2 = $(".pros-item .descr, .pros-item .pic");
@@ -50,11 +60,43 @@ $(document).ready(function () {
     {
         container1.fadeOut(150);
 				$(".pros-item-act").removeClass("pros-item-act");
+
+
     }
   });
 
 	// Наши преимущества, попапы END
-	
+
+	$("input:text, input:password, textarea").val('');
+	$('.form-item').find('input:text, input:password, textarea').each(function(){
+		if(!$(this).val()){
+          $(this).addClass("initial");
+          $(this).parents(".form-item").find(".placeholder").show();
+		}else{
+			$(this).removeClass("initial");
+			$(this).parents(".form-item").find(".placeholder").hide();
+		}
+	});
+
+  $('.result-table .val').each(function(){
+	if($(this).text()=='-0 г') $(this).text('-');
+	if($(this).text()=='0 г') $(this).text('-');
+	if($(this).text()=='-0 мл') $(this).text('-');
+	if($(this).text()=='0 мл') $(this).text('-');
+  })
+  $('.calc-results .result-menu-cont .result-table-cont.fc').each(function(){
+	if($(this).find('.val').length==0){
+		var l = $(this).closest('.calc-cont.fc').find('.slider-wrapper-2 .slider-label-m').text();
+		$(this).closest('.calc-cont.fc').find('.slider-wrapper-2 .slider-label-m').text('');
+		$(this).closest('.calc-cont.fc').find('.slider-wrapper-2 .slider-label-r').text(l);
+		l = $(this).closest('.calc-cont.fc').find('.price-slider').attr('prices');
+		var aL = l.split('-');
+		$(this).closest('.calc-cont.fc').find('.price-slider').attr('prices',aL[0]+'-'+aL[1]+'-'+aL[1]);
+		$(this).html($(this).closest('.calc-cont.fc').find('.result-table-cont.fc').eq(1).html());
+		$(this).addClass('repl');
+	}
+  })
+
   $(".tabbed-content").each(function() {
     var tabs = $(this).children(".tabs").find(".tab");
     var tabContents = $(this).children(".tabs-content").children(".tab-content");
@@ -106,6 +148,14 @@ $(document).ready(function () {
         $(this).parents(".calc-cont").find(".area-val").formatNumber();
         $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".price-slider .ui-slider-handle").html().replace(" ","")));
         $(this).parents(".calc-cont").find(".price-val").formatNumber();
+		var rel = $(this).closest('.tab-content').attr('rel');
+		var type = $('body').find('.tab[rel="'+rel+'"]').text();
+		var price = $(this).closest('.tab-content').find('.result-total.fc .price-val').text();
+		var price_type = $(this).closest('.tab-content').find('.price-slider .ui-slider-handle').text();
+		$(this).closest('.tab-content').find('input[name="data[new][amount]"]').val(val);
+		$(this).closest('.tab-content').find('input[name="data[new][price_type]"]').val(price_type);
+		$(this).closest('.tab-content').find('input[name="data[new][type]"]').val(type);
+		$(this).closest('.tab-content').find('input[name="data[new][price]"]').val(price);
       },
       slidecreate : function(event,ui) {
         var sldr = $(this);
@@ -122,6 +172,15 @@ $(document).ready(function () {
         $(this).parents(".slider-wrapper").find(".end-link").on("click",function() {
           sldr.slider("value",sldr.slider("option","max"))
         });
+
+		var rel = $(this).closest('.tab-content').attr('rel');
+		var type = $('body').find('.tab[rel="'+rel+'"]').text();
+  		var price = $(this).closest('.tab-content').find('.result-total.fc .price-val').text();
+		var price_type = $(this).closest('.tab-content').find('.price-slider .ui-slider-handle').text();
+		$(this).closest('.tab-content').find('input[name="data[new][amount]"]').val(val);
+		$(this).closest('.tab-content').find('input[name="data[new][price_type]"]').val(price_type);
+		$(this).closest('.tab-content').find('input[name="data[new][type]"]').val(type);
+		$(this).closest('.tab-content').find('input[name="data[new][price]"]').val(price);
       }
     }).slider({
         step: 10,
@@ -137,45 +196,18 @@ $(document).ready(function () {
           $(this).parents(".calc-cont").find(".area-val").formatNumber();
           $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".price-slider .ui-slider-handle").html().replace(" ","")));
           $(this).parents(".calc-cont").find(".price-val").formatNumber();
+			var rel = $(this).closest('.tab-content').attr('rel');
+			var type = $('body').find('.tab[rel="'+rel+'"]').text();
+			var price = $(this).closest('.tab-content').find('.result-total.fc .price-val').text();
+			var price_type = $(this).closest('.tab-content').find('.price-slider .ui-slider-handle').text();
+			$(this).closest('.tab-content').find('input[name="data[new][amount]"]').val(val);
+			$(this).closest('.tab-content').find('input[name="data[new][price_type]"]').val(price_type);
+			$(this).closest('.tab-content').find('input[name="data[new][type]"]').val(type);
+			$(this).closest('.tab-content').find('input[name="data[new][price]"]').val(price);
         }
     });
   });
-  
-  // $(".people-slider").each(function() {
-    // $(this).slider({
-      // step: 10,
-      // range: "min",
-      // min: 50,
-      // max: 500,
-      // animate: "slow",
-      // create: function( e, ui ) {
-        // var sldr = $(this);
-        // $(this).parents(".slider-wrapper").append("<div class='begin-link' />");
-        // $(this).parents(".slider-wrapper").append("<div class='end-link' />");
-        // var val=$(this).slider('value');
-        // $(this).find(".ui-slider-handle").html(val);
-        // $(this).find(".ui-slider-handle").formatNumber();
-        // $(this).parents(".calc-cont").find(".area-val").html(parseFloat($(this).attr("areafactor"))*parseInt(val));
-        // $(this).parents(".calc-cont").find(".area-val").formatNumber();
-        // $(this).parents(".slider-wrapper").find(".begin-link").on("click",function() {
-          // sldr.slider("value",sldr.slider("option","min"));
-        // });
-        // $(this).parents(".slider-wrapper").find(".end-link").on("click",function() {
-          // sldr.slider("value",sldr.slider("option","max"))
-        // });
-      // },
-      // slide: function(event, ui) {
-        // val = ui.value;
-        // $(this).find(".ui-slider-handle").html(val);
-        // $(this).find(".ui-slider-handle").formatNumber();
-        // $(this).parents(".calc-cont").find(".area-val").html(parseFloat($(this).attr("areafactor"))*parseInt(val));
-        // $(this).parents(".calc-cont").find(".area-val").formatNumber();
-        // $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".price-slider .ui-slider-handle").html().replace(" ","")));
-        // $(this).parents(".calc-cont").find(".price-val").formatNumber();
-      // }
-    // });
-  // });
-  
+
   $(".price-slider").each(function() {
     var prices = $(this).attr("prices").split("-");
     var minVal = parseInt(prices[0]);
@@ -196,7 +228,16 @@ $(document).ready(function () {
         $(this).parents(".calc-cont").find(".price-val").formatNumber();
         $(this).parents(".calc-cont").find(".result-table-cont").hide();
         $(this).parents(".calc-cont").find(".result-table-cont").eq(0).fadeIn(150);
-        
+
+		var rel = $(this).closest('.tab-content').attr('rel');
+		var type = $('body').find('.tab[rel="'+rel+'"]').text();
+		var price = $(this).closest('.tab-content').find('.result-total.fc .price-val').text();
+		var price_type = $(this).closest('.tab-content').find('.price-slider .ui-slider-handle').text();
+		$(this).closest('.tab-content').find('input[name="data[new][amount]"]').val(val);
+		$(this).closest('.tab-content').find('input[name="data[new][price_type]"]').val(price_type);
+		$(this).closest('.tab-content').find('input[name="data[new][type]"]').val(type);
+		$(this).closest('.tab-content').find('input[name="data[new][price]"]').val(price);
+
         $(this).parents(".slider-wrapper").find(".begin-link").on("click",function() {
           sldr.slider("value",sldr.slider("option","min"))
           val = minVal;
@@ -238,16 +279,23 @@ $(document).ready(function () {
           val = minVal;
         }
         if (sliderVal > 250 && sliderVal <= 750) {
-          $(this).slider( "value", 500 );
-          $(this).parents(".calc-cont").find(".result-table-cont").hide();
-          $(this).parents(".calc-cont").find(".result-table-cont").eq(1).fadeIn(150);
-          val = midVal;
+		  if($(this).parents(".calc-cont").find(".result-table-cont.repl").length==1){
+		  	$(this).slider( "value", 1000);
+          	$(this).parents(".calc-cont").find(".result-table-cont").hide();
+          	$(this).parents(".calc-cont").find(".result-table-cont").eq(2).fadeIn(150);
+          	val = maxVal;
+		  }else{
+			  $(this).slider( "value", 500 );
+	          $(this).parents(".calc-cont").find(".result-table-cont").hide();
+	          $(this).parents(".calc-cont").find(".result-table-cont").eq(1).fadeIn(150);
+	          val = midVal;
+		  }
         }
         if (sliderVal > 750) {
-          $(this).slider( "value", 1000);
-          $(this).parents(".calc-cont").find(".result-table-cont").hide();
-          $(this).parents(".calc-cont").find(".result-table-cont").eq(2).fadeIn(150);
-          val = maxVal;
+		  	$(this).slider( "value", 1000);
+          	$(this).parents(".calc-cont").find(".result-table-cont").hide();
+          	$(this).parents(".calc-cont").find(".result-table-cont").eq(2).fadeIn(150);
+          	val = maxVal;
         }
         // val = $(this).slider("value");
         $(this).find(".ui-slider-handle").html(val);
@@ -259,6 +307,15 @@ $(document).ready(function () {
         $(this).parents(".calc-cont").find(".personprice-val").formatNumber();
         $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".people-slider").slider('value')));
         $(this).parents(".calc-cont").find(".price-val").formatNumber();
+
+		var rel = $(this).closest('.tab-content').attr('rel');
+		var type = $('body').find('.tab[rel="'+rel+'"]').text();
+		var price = $(this).closest('.tab-content').find('.result-total.fc .price-val').text();
+		var price_type = $(this).closest('.tab-content').find('.price-slider .ui-slider-handle').text();
+		$(this).closest('.tab-content').find('input[name="data[new][amount]"]').val(val);
+		$(this).closest('.tab-content').find('input[name="data[new][price_type]"]').val(price_type);
+		$(this).closest('.tab-content').find('input[name="data[new][type]"]').val(type);
+		$(this).closest('.tab-content').find('input[name="data[new][price]"]').val(price);
       }
     }).slider({
       step: 10,
@@ -269,76 +326,7 @@ $(document).ready(function () {
     });
   });
   
-  // $(".price-slider").each(function() {
-    // var prices = $(this).attr("prices").split("-");
-    // var minVal = parseInt(prices[0]);
-    // var midVal = parseInt(prices[1]);
-    // var maxVal = parseInt(prices[prices.length-1]);
-    // $(this).slider({
-      // step: 10,
-      // range: "min",
-      // min: 0,
-      // max: 1000,
-      // animate: "slow",
-      // create: function( e, ui ) {
-        // var sldr = $(this);
-        // $(this).parents(".slider-wrapper").append("<div class='begin-link' />");
-        // $(this).parents(".slider-wrapper").append("<div class='end-link' />");
-        // var val=minVal;
-        // $(this).find(".ui-slider-handle").html(val);
-        // $(this).find(".ui-slider-handle").formatNumber();
-        // $(this).parents(".calc-cont").find(".personprice-val").html(val);
-        // $(this).parents(".calc-cont").find(".personprice-val").formatNumber();
-        // $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".people-slider").slider('value')));
-        // $(this).parents(".calc-cont").find(".price-val").formatNumber();
-        // $(this).parents(".slider-wrapper").find(".begin-link").on("click",function() {
-          // sldr.slider("value",sldr.slider("option","min"))
-        // });
-        // $(this).parents(".slider-wrapper").find(".end-link").on("click",function() {
-          // sldr.slider("value",sldr.slider("option","max"))
-        // });
-        // $(this).parents(".calc-cont").find(".result-table-cont").hide();
-        // $(this).parents(".calc-cont").find(".result-table-cont").eq(0).fadeIn(150);
-      // },
-      // slide: function(event, ui) {
-        // val = ui.value;
-      // },
-      // stop: function(event, ui) {
-        // sliderVal = ui.value;
-        // if (sliderVal <= 250) {
-          // $(this).slider( "value", 0 );
-          // $(this).parents(".calc-cont").find(".result-table-cont").hide();
-          // $(this).parents(".calc-cont").find(".result-table-cont").eq(0).fadeIn(150);
-          // val = minVal;
-        // }
-        // if (sliderVal > 250 && sliderVal <= 750) {
-          // $(this).slider( "value", 500 );
-          // $(this).parents(".calc-cont").find(".result-table-cont").hide();
-          // $(this).parents(".calc-cont").find(".result-table-cont").eq(1).fadeIn(150);
-          // val = midVal;
-        // }
-        // if (sliderVal > 750) {
-          // $(this).slider( "value", 1000);
-          // $(this).parents(".calc-cont").find(".result-table-cont").hide();
-          // $(this).parents(".calc-cont").find(".result-table-cont").eq(2).fadeIn(150);
-          // val = maxVal;
-        // }
-        // // val = $(this).slider("value");
-        // $(this).find(".ui-slider-handle").html(val);
-        // $(this).find(".ui-slider-handle").formatNumber();
-        // $(this).parents(".calc-cont").find(".price-val").formatNumber();
-        // $(this).find(".ui-slider-handle").html(val);
-        // $(this).find(".ui-slider-handle").formatNumber();
-        // $(this).parents(".calc-cont").find(".personprice-val").html(val);
-        // $(this).parents(".calc-cont").find(".personprice-val").formatNumber();
-        // $(this).parents(".calc-cont").find(".price-val").html(parseInt(val)*parseInt($(this).parents(".calc-cont").find(".people-slider").slider('value')));
-        // $(this).parents(".calc-cont").find(".price-val").formatNumber();
-      // }
-      
-    // });
-  // });
-    
-    
+
   /* --------------------------------------------------------- */
 
   $(".form-text").each(function() {
@@ -352,8 +340,79 @@ $(document).ready(function () {
   validateForms();
 
   makeup();
-  
-  
+
+
+    $("input:text, input:password, textarea").addClass("initial");
+
+	$(".form-item").find(".placeholder").on('click',function() {
+		$('.form-item').find('input:text, input:password, textarea').each(function(){
+			if(!$(this).val()){
+	          $(this).addClass("initial");
+	          $(this).parents(".form-item").find(".placeholder").show();
+			}else{
+				$(this).removeClass("initial");
+				$(this).parents(".form-item").find(".placeholder").hide();
+			}
+		});
+		$(this).closest('.form-item').find('input:text, input:password, textarea').removeClass("initial");
+		$(this).hide();
+		$(this).closest('.form-item').find('input:text, input:password, textarea').focus();
+	})
+
+ 	$("input:text, input:password, textarea").on('change',function(){
+		if(!$(this).val()){
+          $(this).addClass("initial");
+          $(this).parents(".form-item").find(".placeholder").show();
+		}else{
+			$(this).removeClass("initial");
+			$(this).parents(".form-item").find(".placeholder").hide();
+		}
+
+		$('input.form-phone').each(function(){
+			if(!$(this).val()){
+	          $(this).addClass("initial");
+	          $(this).parents(".form-item").find(".placeholder").show();
+			}else{
+				$(this).removeClass("initial");
+				$(this).parents(".form-item").find(".placeholder").hide();
+			}
+		})
+	})
+
+ 	$("input:text, input:password, textarea").on('click',function(){
+		$(this).removeClass("initial");
+		$(this).parents(".form-item").find(".placeholder").hide();
+
+		$('input.form-phone').each(function(){
+			if(!$(this).val()){
+	          $(this).addClass("initial");
+	          $(this).parents(".form-item").find(".placeholder").show();
+			}else{
+				$(this).removeClass("initial");
+				$(this).parents(".form-item").find(".placeholder").hide();
+			}
+		})
+	})
+
+ 	$("input:text, input:password, textarea").on('focusout',function(){
+		if(!$(this).val()){
+          $(this).addClass("initial");
+          $(this).parents(".form-item").find(".placeholder").show();
+		}else{
+			$(this).removeClass("initial");
+			$(this).parents(".form-item").find(".placeholder").hide();
+		}
+
+		$('input.form-phone').each(function(){
+			if(!$(this).val()){
+	          $(this).addClass("initial");
+	          $(this).parents(".form-item").find(".placeholder").show();
+			}else{
+				$(this).removeClass("initial");
+				$(this).parents(".form-item").find(".placeholder").hide();
+			}
+		})
+	})
 });
 
 function makeup() {
@@ -376,49 +435,7 @@ function makeup() {
     }
     
   });
-  
-  $("input:text, input:password, textarea").each(function() {
-    $(this).addClass("initial");
-    
-    if ($(this).prop("tagName") == "INPUT") {
-      // if (!$(this).parents(".input-wrapper").length) $(this).wrap("<div class='input-wrapper'></div>");
-      if ($(this).hasClass("form-phone")) {
-        $(this).focus(function() {
-          $(this).removeClass("initial");
-          $(this).parents(".form-item").find(".placeholder").hide();
-        });
-      } else {
-        $(this).keydown(function() {
-          $(this).removeClass("initial");
-          $(this).parents(".form-item").find(".placeholder").hide();
-        });
-      }
-      $(this).blur(function() {
-        $(this).prev().prev(".placeholder").hide();
-        if (!$(this).val()) {
-          $(this).addClass("initial");
-          $(this).parents(".form-item").find(".placeholder").show();
-        }
-      });
-    } else {
-      $(this).focus(function() {
-        $(this).removeClass("initial");
-        $(this).parents(".form-item").find(".placeholder").hide();
-      });
-      $(this).blur(function() {
-        if (!$(this).val()) {
-          $(this).addClass("initial");
-          $(this).parents(".form-item").find(".placeholder").show();
-        }
-      });
-    }
-      
-    $(this).parents(".form-item").find(".placeholder").click(function() {
-      $(this).focus();
-    });
-    
-  });
-  
+
 }
 
 function validateForms() {
@@ -452,7 +469,36 @@ function validateForms() {
           if (errors && validatorcalc.errorList[0].element.tagName == "INPUT") {                    
               validatorcalc.errorList[0].element.focus();
           }
-      }
+      },
+		submitHandler: function(form) {
+			$.ajax({
+				url: $(form).attr('action'),
+				global: true,
+				type: "POST",
+				data: $(form).serialize(),
+				dataType: "html",
+				async:false,
+				success: function(){
+					var goal = $(form).closest('.goal').attr('rel');
+					var newgoal = $(form).siblings('span.newgoal').attr('rel');
+					if(goal) yaCounter24791492.reachGoal(goal);
+					if(newgoal) yaCounter25284053.reachGoal(newgoal);
+					$("input:text, input:password, textarea").val('');
+					$('.form-item').find('input:text, input:password, textarea').each(function(){
+						if(!$(this).val()){
+				          $(this).addClass("initial");
+				          $(this).parents(".form-item").find(".placeholder").show();
+						}else{
+							$(this).removeClass("initial");
+							$(this).parents(".form-item").find(".placeholder").hide();
+						}
+					});
+					closePopup();
+					openPopup('callbackPopupSubmit');
+
+				}
+			});
+		}
     });
     
     if ($(this).find(".form-email").length) {
@@ -719,6 +765,128 @@ jQuery.extend(jQuery.validator.messages, {
     
   }
 })( jQuery );
+
+(function( jQuery ) {
+  jQuery.fn.casesSlider = function() {
+  
+  
+    var slider = $(this);
+    var slides = slider.find(".slide");
+    var sliderSize = slides.size();
+    
+    slides.hide();
+    slides.eq(0).show().addClass("slide-act");
+    
+    //sliderMakeup();
+    
+    if (sliderSize > 1) {
+		
+			slider.find(".slides").after("<div class='lister' />");
+			
+			var lister = slider.find(".lister");
+			
+			for (i=0;i<sliderSize;i++) {
+				lister.append("<div class='lister-item' />");
+			}
+    
+      var listerItems = slider.find(".lister-item");
+      
+			listerItems.eq(0).addClass("act");
+			
+      slider.find(".slides").after("<div class='next'><span class='txt'>Вперед</span></div>");
+      slider.find(".slides").after("<div class='prev'><span class='txt'>Назад</span></div>");
+      
+      var prevBtn = slider.find(".prev");
+      var nextBtn = slider.find(".next");
+      
+      nextBtn.click(function() {
+        curIndex = parseInt(slider.find(".slide-act").prevAll(".slide").length)
+        slides.fadeOut(500).removeClass("slide-act");
+        if (curIndex < sliderSize-1) {
+          curIndex++;
+        } else {
+          curIndex = 0;
+        }
+        slides.eq(curIndex).fadeIn(500).addClass("slide-act");
+        listerItems.removeClass("act");
+        listerItems.eq(curIndex).addClass("act")
+      });
+      
+      prevBtn.click(function() {
+        curIndex = parseInt(slider.find(".slide-act").prevAll(".slide").length)
+        slides.fadeOut(500).removeClass("slide-act");
+        if (curIndex > 0) {
+          curIndex--;
+        } else {
+          curIndex = slides.length-1;
+        }
+        slides.eq(curIndex).fadeIn(500).addClass("slide-act");
+        listerItems.removeClass("act");
+        listerItems.eq(curIndex).addClass("act")
+      });
+      
+      
+      
+      listerItems.click(function() {
+        var index = $(this).prevAll(".lister-item").length;
+        slides.fadeOut(500).removeClass("slide-act");
+        slides.eq(index).fadeIn(500).addClass("slide-act");
+        listerItems.removeClass("act");
+        $(this).addClass("act");
+      });
+      
+    }
+    
+  }
+})( jQuery );
+
+(function( jQuery ) {
+  jQuery.fn.slideGallery = function() {
+  
+		var gallery = $(this);
+    
+		var galPic = gallery.find(".gal-pic");
+		
+		var galThumbs = gallery.find(".gal-thumbs img");
+		
+		galPic.append("<img src='"+galThumbs.eq(0).attr("src")+"' />");
+		
+		galThumbs.eq(0).addClass("tmb-act");
+		
+		galThumbs.click(function() {
+			if (!$(this).hasClass("tmb-act")) {
+				galThumbs.removeClass("tmb-act");
+				$(this).addClass("tmb-act");
+				galPic.find("img").hide().attr("src",$(this).attr("src")).fadeIn(200);
+			}
+		});
+		
+		var galNext = gallery.find(".gal-next");
+		var galPrev = gallery.find(".gal-prev");
+		
+		galNext.click(function() {
+			var curIndex = gallery.find(".tmb-act").prevAll().length;
+			if (curIndex < galThumbs.size()-1) {
+				curIndex++;
+			} else {
+				curIndex = 0;
+			}
+			galThumbs.eq(curIndex).click();
+		});
+		
+		galPrev.click(function() {
+			var curIndex = gallery.find(".tmb-act").prevAll().length;
+			if (curIndex > 0) {
+				curIndex--;
+			} else {
+				curIndex = galThumbs.size() - 1;
+			}
+			galThumbs.eq(curIndex).click();
+		});
+    
+  }
+})( jQuery );
+
 
 
 (function( $ ) {
