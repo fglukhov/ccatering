@@ -847,9 +847,9 @@ jQuery.extend(jQuery.validator.messages, {
     
 		var galPic = gallery.find(".gal-pic");
 		
-		var galThumbs = gallery.find(".gal-thumbs img");
+		var galThumbs = gallery.find(".gal-thumbs .tmb");
 		
-		galPic.append("<img src='"+galThumbs.eq(0).attr("src")+"' />");
+		galPic.append("<img src='"+galThumbs.eq(0).find("img").attr("src")+"' />");
 		
 		galThumbs.eq(0).addClass("tmb-act");
 		
@@ -857,7 +857,7 @@ jQuery.extend(jQuery.validator.messages, {
 			if (!$(this).hasClass("tmb-act")) {
 				galThumbs.removeClass("tmb-act");
 				$(this).addClass("tmb-act");
-				galPic.find("img").hide().attr("src",$(this).attr("src")).fadeIn(200);
+				galPic.find("img").hide().attr("src",$(this).find("img").attr("src")).fadeIn(200);
 			}
 		});
 		

@@ -2150,6 +2150,15 @@ dl:after,
 	overflow:hidden;
 }
 
+.slide-gallery .gal-thumbs .tmb {
+	width:221px;
+	height:131px;
+	margin:0 8px 0 0;
+	display:block;
+	float:left;
+	background:#5db5ba;
+}
+
 .slide-gallery .gal-pic img {
   width:680px;
 	height:400px;
@@ -2163,10 +2172,13 @@ dl:after,
 .slide-gallery .gal-thumbs img {
   width:221px;
 	height:131px;
-	margin:0 8px 0 0;
 	display:block;
-	float:left;
 	cursor:pointer;
+	position:relative;
+}
+
+.gal-thumbs .tmb-act img {
+	opacity:.5;
 }
 
 .slide-gallery .gal-prev {
@@ -2272,7 +2284,7 @@ dl:after,
 }
 
 .cases-ttl-coffee span {
-  background-image:url(images/ico-coffe.png);
+  background-image:url(images/ico-coffee.png);
 }
 
 .cases-ttl-cocktail span {
