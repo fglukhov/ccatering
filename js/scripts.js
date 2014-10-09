@@ -22,6 +22,8 @@ $(window).scroll(function() {
 
 $(document).ready(function () {
 
+	$(".fancybox").fancybox();
+
 	// Слайдер кейсов
 	
 	$(".cases-slider").each(function() {

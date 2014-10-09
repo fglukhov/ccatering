@@ -2094,7 +2094,7 @@ dl:after,
   font-size:24px;
 	line-height:24px;
 	font-family:'Georgia',serif;
-	margin:0 0 22px 0;
+	margin:0 0 12px 0;
 	font-style:normal;
 }
 
@@ -2102,8 +2102,7 @@ dl:after,
   width: 232px;
 	position: absolute;
 	left: 0;
-	bottom: 36px;
-	border-top: 1px solid #fff;
+	bottom: 22px;
 	margin: 0 30px;
 	text-align: center;
 	padding: 20px 0 0 0;
@@ -2141,6 +2140,30 @@ dl:after,
 
 .cases-slider-alt .descr-author .name {
   color:#fff;
+}
+
+.cases-slider .review-link {
+  font-family: 'Georgia',sans-serif;
+	font-style: italic;
+	text-align: center;
+	border-top: 1px solid #fff;
+	margin: 15px 20px 0 20px;
+	padding: 10px 0 0 0;
+}
+
+.cases-slider-alt .review-link {
+  border-top:1px solid #907474;
+}
+
+.cases-slider .review-link a {
+  color:#090601;
+	text-decoration:none;
+	border-bottom:1px dotted #090601;
+}
+
+.cases-slider-alt .review-link a {
+  color:#fff;
+	border-bottom:1px dotted #fff;
 }
 
 .slide-gallery .gal-pic {
